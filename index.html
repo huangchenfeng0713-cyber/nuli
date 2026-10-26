@@ -221,18 +221,18 @@ main{flex:1;min-height:0;position:relative}
 .sh-body{overflow-y:auto;padding:6px max(18px,env(safe-area-inset-right,0px)) 18px max(18px,env(safe-area-inset-left,0px))}
 .sh.gray{background:var(--bg2)}
 .sh h4{margin:6px 0 2px;font-size:19px;font-weight:600;text-align:center}
-.sh .sub{margin:0 0 12px;text-align:center;color:var(--fg2);font-size:13.5px}
+.sh .sub{margin:0 0 8px;text-align:center;color:var(--fg2);font-size:13.5px}
 
 /* effort sheet */
-.eff-stage{position:relative;margin:2px auto 0;width:min(78%,300px);aspect-ratio:4/5;max-width:100%;border-radius:22px;overflow:hidden;background:#111;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.eff-stage{position:relative;margin:0 auto;width:min(56%,250px);aspect-ratio:4/5;max-width:100%;border-radius:22px;overflow:hidden;background:#111;box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .eff-stage canvas{width:100%;height:100%;display:block}
 .eff-stage::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.55));pointer-events:none}
 .eff-badge{z-index:1;position:absolute;left:12px;bottom:12px;right:12px;display:flex;align-items:flex-end;justify-content:space-between;gap:8px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55);pointer-events:none}
 .eff-badge b{font-size:26px;font-weight:800;letter-spacing:1px;line-height:1}
 .eff-badge small{display:block;font-size:12px;opacity:.9;margin-bottom:4px;letter-spacing:1px}
 .eff-badge .pw{font-size:12px;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px;text-shadow:none;backdrop-filter:blur(6px)}
-.eff-desc{text-align:center;font-size:15px;margin:14px 0 4px;min-height:22px}
-.slider{position:relative;height:56px;margin:4px 6px 0;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
+.eff-desc{text-align:center;font-size:15px;margin:8px 0 2px;min-height:22px}
+.slider{position:relative;height:54px;margin:2px 6px 0;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
 .slider .tr{position:absolute;left:11px;right:11px;top:16px;height:8px;border-radius:9px;background:#ececf0}
 .slider .fill{position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(90deg,#a7abb3 0%,#c7cbd3 12%,#6f9cf0 30%,#3a67d8 44%,#f2b84b 58%,#2fa8ff 72%,#ff4a4a 86%,#b06bff 100%);background-size:var(--trw,300px) 100%}
 .slider .stop{position:absolute;top:16px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#cfd0d6}
@@ -241,10 +241,35 @@ main{flex:1;min-height:0;position:relative}
 .slider.drag .th{transition:none}
 .slider .lb{position:absolute;top:36px;transform:translateX(-50%);font-size:12px;color:var(--fg2);white-space:nowrap}
 .slider .lb.on{color:var(--fg);font-weight:600}
-.eff-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 14px}
+.eff-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:6px 0 12px}
 .eff-stats div{background:#f6f6f8;border-radius:14px;padding:9px 6px;text-align:center}
 .eff-stats small{display:block;font-size:11.5px;color:var(--fg2)}
 .eff-stats b{display:block;font-size:14.5px;margin-top:2px;font-variant-numeric:tabular-nums;font-weight:600}
+.temp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-2px 2px 14px;font-size:13.5px;color:var(--fg2)}
+.temp-seg{display:grid;grid-template-columns:repeat(4,1fr);background:#f1f1f3;border-radius:999px;padding:3px;flex:1;max-width:250px}
+.temp-seg button{font-size:13px;padding:5px 0;border-radius:999px;color:#6b6d74}
+.temp-seg button.on{background:#fff;color:var(--fg);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.ans mark.key{background:none;color:inherit;font-weight:700}
+.ans.lv0{color:#7d8088}
+.ans.lv2 mark.key{background:linear-gradient(transparent 58%,#ffd6d6 0)}
+.ans.lv3 mark.key{background:#eaf1ff;color:#1f4fbf;padding:1px 6px;border-radius:6px}
+.ans.lv4 mark.key{color:#d97706;font-size:1.12em;text-shadow:0 0 14px rgba(255,190,60,.55)}
+.ans.lv5 mark.key{color:#1d7fe0;text-shadow:0 0 12px rgba(80,170,255,.75)}
+.ans.lv6 mark.key{background:linear-gradient(90deg,#ff2d2d,#ff9a3c);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.12em}
+.ans.lv7 mark.key{background:linear-gradient(90deg,#ff5f6d,#ffc371,#47e5bc,#4facfe,#b06bff,#ff5f6d);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.2em;animation:flow 4s linear infinite}
+.ans.lv7 p{letter-spacing:.3px}
+.ans ul,.ans ol{margin:.1em 0 .6em;padding-left:1.3em}
+.ans li{margin:.12em 0}
+.ans .tbl{overflow-x:auto;margin:.2em 0 .7em}
+.ans table{border-collapse:collapse;font-size:.92em;min-width:60%}
+.ans th,.ans td{border:1px solid #e6e7ea;padding:5px 10px;text-align:left;white-space:nowrap}
+.ans th{background:#f6f7f9;font-weight:600}
+.ans.more{margin-top:2px}
+.typing{display:flex;gap:4px;padding:8px 2px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#c4c6cc;animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{opacity:.3;transform:none}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes flow{to{background-position:-200% 0}}
 .pbtn{display:block;width:100%;height:50px;border-radius:999px;background:#111;color:#fff;font-size:17px;font-weight:500}
 .pbtn.light{background:#f1f1f3;color:var(--fg)}
 .pbtn:active{transform:scale(.99)}
@@ -313,6 +338,10 @@ main{flex:1;min-height:0;position:relative}
 @keyframes flash{from{opacity:.95}to{opacity:0}}
 @keyframes shake{0%,100%{transform:none}20%{transform:translate(-4px,2px)}40%{transform:translate(4px,-2px)}60%{transform:translate(-3px,-1px)}80%{transform:translate(3px,1px)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+#effOk{position:sticky;bottom:0;box-shadow:0 -10px 18px 6px #fff}
+@media (max-height:700px){.eff-stage{width:min(50%,220px)}.eff-badge{left:9px;right:9px;bottom:9px}.eff-badge b{font-size:19px}.eff-badge .pw{font-size:10.5px;padding:2px 6px}}
+.eff-badge b,.eff-badge .pw,.eff-badge small{white-space:nowrap}
 
 </style>
 </head>
@@ -420,6 +449,7 @@ main{flex:1;min-height:0;position:relative}
         <div><small>额度消耗</small><b id="effCost">1%</b></div>
         <div><small>智力加成</small><b id="effIq">+0%</b></div>
       </div>
+      <div class="temp-row"><span>回答随机度</span><div class="temp-seg" id="tempSeg"></div></div>
       <button class="pbtn" id="effOk">就这么努力</button>
     </div>
   </div></div>
@@ -565,15 +595,16 @@ function ic(name, size, sw){
 
 /* ---------- levels ---------- */
 const LEVELS = [
-  {n:'摆烂', tag:'躺平', desc:'能不想就不想，答案随缘', think:0,    fake:0,        cost:0,  iq:'+0%', pw:3,      glow:'#9aa0a6', bar:'#9aa0a6'},
-  {n:'快速', tag:'普通人', desc:'简单问题，秒回',        think:700,  fake:0.4,      cost:1,  iq:'+0%', pw:12,     glow:'#cfd3da', bar:'#c7cbd3'},
-  {n:'认真', tag:'系上头带', desc:'系紧头带，认真动脑',   think:2200, fake:3,        cost:3,  iq:'+0%', pw:58,     glow:'#ff6b6b', bar:'#ef4444'},
-  {n:'专家', tag:'推推眼镜', desc:'深度思考，严谨推理',   think:3600, fake:27,       cost:6,  iq:'+0%', pw:420,    glow:'#7aa7ff', bar:'#3a67d8'},
-  {n:'爆种', tag:'气场外放', desc:'潜能开始往外溢',       think:5000, fake:192,      cost:10, iq:'+0%', pw:5300,   glow:'#ffd36b', bar:'#f2b84b'},
-  {n:'觉醒', tag:'电光缠身', desc:'大脑皮层全面通电',     think:6200, fake:2880,     cost:15, iq:'+0%', pw:88000,  glow:'#4fb2ff', bar:'#2fa8ff'},
-  {n:'超神', tag:'烈焰神瞳', desc:'燃烧全部脑细胞',       think:7600, fake:22620,    cost:22, iq:'+0%', pw:1.2e6,  glow:'#ff4a4a', bar:'#ff4a4a'},
-  {n:'飞升', tag:'宇宙意志', desc:'调动全宇宙的算力',     think:9000, fake:4.35e17,  cost:35, iq:'+0%', pw:Infinity, glow:'#c7a2ff', bar:'linear-gradient(90deg,#ff5f6d,#ffc371,#47e5bc,#4facfe,#b06bff)'},
+  {n:'摆烂', tag:'躺平', desc:'能不想就不想，答案随缘', think:0,    fake:0,        cost:0,  iq:'+0%', pw:3,      glow:'#9aa0a6', bar:'#9aa0a6', label:'已跳过思考'},
+  {n:'快速', tag:'普通人', desc:'简单问题，秒回',        think:700,  fake:0.4,      cost:1,  iq:'+0%', pw:12,     glow:'#cfd3da', bar:'#c7cbd3', label:'已思考'},
+  {n:'认真', tag:'系上头带', desc:'系紧头带，认真动脑',   think:2400, fake:3,        cost:3,  iq:'+0%', pw:58,     glow:'#ff6b6b', bar:'#ef4444', label:'已认真思考'},
+  {n:'专家', tag:'推推眼镜', desc:'深度思考，严谨推理',   think:3800, fake:27,       cost:6,  iq:'+0%', pw:420,    glow:'#7aa7ff', bar:'#3a67d8', label:'已深度思考'},
+  {n:'爆种', tag:'气场外放', desc:'潜能开始往外溢',       think:5000, fake:192,      cost:10, iq:'+0%', pw:5300,   glow:'#ffd36b', bar:'#f2b84b', label:'已爆种思考'},
+  {n:'觉醒', tag:'电光缠身', desc:'大脑皮层全面通电',     think:6200, fake:2880,     cost:15, iq:'+0%', pw:88000,  glow:'#4fb2ff', bar:'#2fa8ff', label:'已觉醒思考'},
+  {n:'超神', tag:'烈焰神瞳', desc:'燃烧全部脑细胞',       think:7400, fake:22620,    cost:22, iq:'+0%', pw:1.2e6,  glow:'#ff4a4a', bar:'#ff4a4a', label:'已燃烧思考'},
+  {n:'飞升', tag:'宇宙意志', desc:'调动全宇宙的算力',     think:8800, fake:4.35e17,  cost:35, iq:'+0%', pw:Infinity, glow:'#c7a2ff', bar:'linear-gradient(90deg,#ff5f6d,#ffc371,#47e5bc,#4facfe,#b06bff)', label:'已飞升思考'},
 ];
+const TEMPS = [{v:.5,n:'稳重'},{v:1,n:'正常'},{v:1.6,n:'活泼'},{v:2.4,n:'放飞'}];
 function fmtFake(sec){
   if (!isFinite(sec)) return '∞';
   if (sec < 10) return (Math.round(sec*10)/10) + ' 秒';
@@ -589,9 +620,8 @@ function fmtFake(sec){
 }
 function fmtPw(v){ if(!isFinite(v)) return '∞'; if(v>=1e4) return (Math.round(v/1e3)/10)+' 万'; return String(v); }
 
-/* ---------- offline brain ---------- */
-const Brain = (() => {
-  const rnd = a => a[Math.floor(Math.random()*a.length)];
+/* ---------- solvers: understand the question, return structured facts ---------- */
+const Solve = (() => {
   const CN = {'零':0,'〇':0,'一':1,'二':2,'两':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9};
   const CNU = {'十':10,'百':100,'千':1000};
   function cnNum(s){
@@ -604,10 +634,9 @@ const Brain = (() => {
     }
     return total+section+num;
   }
-  function half(q){
-    return q.replace(/[！-～]/g, c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/　/g,' ');
-  }
-  /* ----- arithmetic ----- */
+  const half = q => q.replace(/[！-～]/g, c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/　/g,' ');
+
+  /* ----- numbers ----- */
   function evalExpr(src){
     const t = []; let i=0;
     while (i<src.length){
@@ -639,8 +668,60 @@ const Brain = (() => {
   function fmtNum(v){
     if (!isFinite(v)) return '∞';
     if (Math.abs(v) >= 1e15 || (Math.abs(v) < 1e-6 && v !== 0)) return v.toExponential(6).replace(/\.?0+e/,'e');
-    const r = Math.round(v*1e8)/1e8;
-    return String(r);
+    return String(Math.round(v*1e8)/1e8);
+  }
+  const isInt = v => Number.isFinite(v) && Math.abs(v) < 1e12 && Math.abs(v-Math.round(v)) < 1e-9;
+  function factorize(n){ n=Math.abs(n); const f=[]; for (let p=2; p*p<=n; p++){ while(n%p===0){ f.push(p); n/=p; } } if(n>1) f.push(n); return f; }
+  function roman(n){ if(n<1||n>3999) return null; const M=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']]; let s=''; for (const [v,r] of M){ while(n>=v){ s+=r; n-=v; } } return s; }
+  function cnUpper(n){
+    if (!isInt(n) || n<0) return null; n=Math.round(n); if (n===0) return '零';
+    const D='零壹贰叁肆伍陆柒捌玖', U=['','拾','佰','仟'];
+    const sec = x => { let s='', z=false; const ds=String(x).padStart(4,'0'); for (let i=0;i<4;i++){ const d=+ds[i]; if (!d){ z = s!==''; } else { if (z){ s+='零'; z=false; } s += D[d]+U[3-i]; } } return s; };
+    const parts=[]; let x=n; while(x>0){ parts.unshift(x%10000); x=Math.floor(x/10000); }
+    const big=['','万','亿','万亿']; let out='';
+    parts.forEach((p,i)=>{ const u=big[parts.length-1-i]; if (!p){ if(out && !out.endsWith('零')) out+='零'; return; } if (out && p<1000 && !out.endsWith('零')) out+='零'; out += sec(p)+u; });
+    return out.replace(/零+$/,'');
+  }
+  function cnPlain(n){ return cnUpper(n)?.replace(/壹/g,'一').replace(/贰/g,'二').replace(/叁/g,'三').replace(/肆/g,'四').replace(/伍/g,'五').replace(/陆/g,'六').replace(/柒/g,'七').replace(/捌/g,'八').replace(/玖/g,'九').replace(/拾/g,'十').replace(/佰/g,'百').replace(/仟/g,'千').replace(/^一十/,'十'); }
+  function collatz(n){ if (!isInt(n) || n<1 || n>1e9) return null; let k=0; while(n!==1 && k<5000){ n = n%2 ? 3*n+1 : n/2; k++; } return k; }
+  function numFacts(v){
+    const f = {};
+    if (!isInt(v)) { f.sci = v.toExponential(4); return f; }
+    const n = Math.round(v), a = Math.abs(n);
+    f.n = n; f.even = n%2===0;
+    if (a>=2 && a<1e12){ const fs = factorize(a); f.prime = fs.length===1; f.factors = fs; }
+    if (a<2**31){ f.bin = (n<0?'-':'') + a.toString(2); f.hex = (n<0?'-':'') + '0x' + a.toString(16).toUpperCase(); f.oct = (n<0?'-':'') + '0o' + a.toString(8); }
+    f.roman = n>0 ? roman(n) : null;
+    f.upper = n>=0 ? cnUpper(n) : null;
+    f.digits = String(a).split('').reduce((s,d)=>s+ +d,0);
+    f.square = a>0 && Number.isInteger(Math.sqrt(a));
+    f.collatz = collatz(a);
+    f.sqrt = Math.sqrt(a);
+    return f;
+  }
+  function approx(v){
+    if (!isFinite(v)) return '很大';
+    const a=Math.abs(v); if (a<10) return fmtNum(Math.round(v));
+    const p = Math.pow(10, Math.floor(Math.log10(a))); return fmtNum(Math.round(v/p)*p);
+  }
+  function mathSteps(s, v){
+    const m = s.match(/^(\d+)([+\-*/])(\d+)$/);
+    if (!m) return {steps:[`按运算顺序处理：先括号，再乘方，再乘除，最后加减。`, `算出结果 ${fmtNum(v)}。`], check:null, method:'四则运算顺序'};
+    const a=+m[1], o=m[2], b=+m[3];
+    if (o==='+'){
+      if (a>=10 && b>=10 && a<10000 && b<10000){ const a0=a-a%10, b0=b-b%10; return {steps:[`先算整十：${a0} + ${b0} = ${a0+b0}`, `再算个位：${a%10} + ${b%10} = ${a%10+b%10}`, `合起来：${a0+b0} + ${a%10+b%10} = ${v}`], check:`${v} - ${b} = ${a}`, method:'拆分凑整法'}; }
+      return {steps:[`${a} 加上 ${b}，数一数：${v}`], check:`${v} - ${b} = ${a}`, method:'加法'};
+    }
+    if (o==='-') return {steps:[`从 ${a} 里拿走 ${b}`, `还剩 ${fmtNum(v)}`], check:`${fmtNum(v)} + ${b} = ${a}`, method:'减法'};
+    if (o==='*'){
+      if (b>=10 && b%10 && b<1000){ const b0=b-b%10, b1=b%10; return {steps:[`把 ${b} 拆成 ${b0} + ${b1}`, `${a} × ${b0} = ${a*b0}`, `${a} × ${b1} = ${a*b1}`, `相加：${a*b0} + ${a*b1} = ${v}`], check:`${v} ÷ ${b} = ${a}`, method:'乘法分配律'}; }
+      return {steps:[`${a} 个 ${b} 相加`, `得到 ${v}`], check: b?`${v} ÷ ${b} = ${a}`:null, method:'乘法口诀'};
+    }
+    if (o==='/'){
+      const q = Math.floor(a/b), r = a%b;
+      if (isInt(v)) return {steps:[`看 ${a} 里有几个 ${b}`, `正好 ${v} 个`], check:`${v} × ${b} = ${a}`, method:'除法'};
+      return {steps:[`${a} ÷ ${b} 商 ${q}，余 ${r}`, `写成小数是 ${fmtNum(v)}`], check:`${q} × ${b} + ${r} = ${a}`, method:'带余除法'};
+    }
   }
   function tryMath(raw){
     let q = half(raw).replace(/[，,]/g,'').replace(/[？?。！!～~]/g,'').trim();
@@ -663,16 +744,20 @@ const Brain = (() => {
     if (!/^[0-9+\-*/^().%!\s]+$/.test(s.replace(/sqrt/g,''))) return null;
     s = s.replace(/\s+/g,'');
     if (!/[0-9]/.test(s) || !/[+\-*/^%!]|sqrt/.test(s)) return null;
+    const pretty = s.replace(/\*/g,' × ').replace(/\//g,' ÷ ').replace(/\+/g,' + ').replace(/(\d|\))-/g,'$1 - ').replace(/sqrt/g,'√');
     try {
       const v = evalExpr(s);
-      const pretty = s.replace(/\*/g,' × ').replace(/\//g,' ÷ ').replace(/\+/g,' + ').replace(/(\d)-/g,'$1 - ').replace(/sqrt/g,'√');
-      return {a: `${pretty} = ${fmtNum(v)}`, kind:'math', v};
+      const st = mathSteps(s, v);
+      const nums = (s.match(/\d+(\.\d+)?/g)||[]).map(Number);
+      const op = /\*/.test(s)?'乘法':/\//.test(s)?'除法':/\^/.test(s)?'乘方':/sqrt/.test(s)?'开方':/!/.test(s)?'阶乘':/-/.test(s)?'减法':'加法';
+      return {kind:'math', short:fmtNum(v), core:`${pretty} = ${fmtNum(v)}`, v, vs:fmtNum(v), expr:pretty, raw:s, nums, op, ...st, facts:numFacts(v), approx:approx(v), trivial: Math.abs(v)<=20 && nums.every(n=>n<=10)};
     } catch(e){
-      if (e==='div0') return {a:'除以 0 是没有意义的。真要算的话，宇宙会先崩掉。', kind:'math'};
-      if (e==='neg') return {a:'负数在实数范围里没有平方根，得请出虚数 i 才行。', kind:'math'};
+      if (e==='div0') return {kind:'math', core:'除以 0 没有意义。', special:'div0', expr:pretty, op:'除法', steps:['发现除数是 0','除以 0 在数学里没有定义'], nums:[], facts:{}};
+      if (e==='neg') return {kind:'math', core:'负数在实数范围里没有平方根，要请出虚数 i。', special:'neg', expr:pretty, op:'开方', steps:['被开方数是负数','实数里没有这样的数'], nums:[], facts:{}};
       return null;
     }
   }
+
   /* ----- units ----- */
   const UNITS = {
     '毫米':['L',.001],'厘米':['L',.01],'分米':['L',.1],'米':['L',1],'公里':['L',1000],'千米':['L',1000],'km':['L',1000],'cm':['L',.01],'mm':['L',.001],'m':['L',1],
@@ -690,29 +775,27 @@ const Brain = (() => {
     if (t){
       const v=parseFloat(t[1]); const from=/华|℉/.test(t[2])?'F':'C'; const to=/华|℉/.test(t[3])?'F':'C';
       if (from===to) return null;
-      const r = from==='C' ? v*9/5+32 : (v-32)*5/9;
-      return {a:`${v}${from==='C'?'℃':'℉'} ≈ ${fmtNum(Math.round(r*100)/100)}${to==='C'?'℃':'℉'}`, kind:'unit'};
+      const r = Math.round((from==='C' ? v*9/5+32 : (v-32)*5/9)*100)/100;
+      return {kind:'unit', cat:'temp', core:`${v}${from==='C'?'℃':'℉'} ≈ ${fmtNum(r)}${to==='C'?'℃':'℉'}`, v, r, from:from==='C'?'℃':'℉', to:to==='C'?'℃':'℉', formula: from==='C' ? `${v} × 9 ÷ 5 + 32 = ${fmtNum(r)}` : `(${v} - 32) × 5 ÷ 9 = ${fmtNum(r)}`};
     }
     const re = new RegExp(`([0-9.]+|[零〇一二两三四五六七八九十百千万]+)(${UKEYS})(?:等于|是|换算成|换成|转成|合|相当于|有|是多少)?(?:多少|几)个?(${UKEYS})`);
     const m = q.match(re);
     if (!m) return null;
     const v = /^[0-9.]+$/.test(m[1]) ? parseFloat(m[1]) : cnNum(m[1]);
     const A = UNITS[m[2]], B = UNITS[m[3]];
-    if (!A || !B || A[0]!==B[0]) return {a:`「${m[2]}」和「${m[3]}」不是一类单位，没法换算。`, kind:'unit'};
-    const r = v*A[1]/B[1];
-    return {a:`${v} ${m[2]} = ${fmtNum(Math.round(r*1e6)/1e6)} ${m[3]}`, kind:'unit'};
+    if (!A || !B || A[0]!==B[0]) return {kind:'unit', cat:'bad', core:`「${m[2]}」和「${m[3]}」不是一类单位，没法换算。`, from:m[2], to:m[3]};
+    const r = Math.round(v*A[1]/B[1]*1e6)/1e6, k = A[1]/B[1];
+    return {kind:'unit', cat:A[0], short:`${fmtNum(r)} ${m[3]}`, core:`${v} ${m[2]} = ${fmtNum(r)} ${m[3]}`, v, r, from:m[2], to:m[3], base:v*A[1], formula:`1 ${m[2]} = ${fmtNum(Math.round(k*1e6)/1e6)} ${m[3]}，所以 ${v} × ${fmtNum(Math.round(k*1e6)/1e6)} = ${fmtNum(r)}`};
   }
+
   /* ----- date & time ----- */
   const WK = '日一二三四五六';
   const pad = n => String(n).padStart(2,'0');
   const fmtD = d => `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日，星期${WK[d.getDay()]}`;
   const LUNAR = {
-    '春节':['2026-02-17','2027-02-06','2028-01-26','2029-02-13'],
-    '过年':['2026-02-17','2027-02-06','2028-01-26','2029-02-13'],
-    '中秋':['2026-09-25','2027-09-15','2028-10-03','2029-09-22'],
-    '端午':['2026-06-19','2027-06-09','2028-05-28','2029-06-16'],
-    '元宵':['2026-03-03','2027-02-20','2028-02-09','2029-02-27'],
-    '七夕':['2026-08-19','2027-08-08','2028-08-26','2029-08-16'],
+    '春节':['2026-02-17','2027-02-06','2028-01-26','2029-02-13'], '过年':['2026-02-17','2027-02-06','2028-01-26','2029-02-13'],
+    '中秋':['2026-09-25','2027-09-15','2028-10-03','2029-09-22'], '端午':['2026-06-19','2027-06-09','2028-05-28','2029-06-16'],
+    '元宵':['2026-03-03','2027-02-20','2028-02-09','2029-02-27'], '七夕':['2026-08-19','2027-08-08','2028-08-26','2029-08-16'],
   };
   const FIXED = {'元旦':[1,1],'情人节':[2,14],'妇女节':[3,8],'愚人节':[4,1],'劳动节':[5,1],'五一':[5,1],'儿童节':[6,1],'国庆':[10,1],'万圣节':[10,31],'光棍节':[11,11],'双十一':[11,11],'双11':[11,11],'平安夜':[12,24],'圣诞':[12,25],'跨年':[12,31]};
   function nextDate(name){
@@ -722,247 +805,867 @@ const Brain = (() => {
     let d = new Date(now.getFullYear(), f[0]-1, f[1]); if (d<now) d = new Date(now.getFullYear()+1, f[0]-1, f[1]); return d;
   }
   const ZODIAC = '猴鸡狗猪鼠牛虎兔龙蛇马羊';
+  function dayOfYear(d){ const s=new Date(d.getFullYear(),0,1); return Math.round((d-s)/86400000)+1; }
   function tryDate(raw){
     const q = half(raw);
     const now = new Date();
+    const today = fmtD(now);
     if (/(现在|当前|此刻)?(几点|什么时间|啥时候了|多少点)/.test(q) && !/距离|还有多久|几点(开|下|上)/.test(q))
-      return {a:`现在是 ${pad(now.getHours())}:${pad(now.getMinutes())}（按你手机的时间）。`, kind:'date'};
+      return {kind:'date', sub:'time', core:`现在是 ${pad(now.getHours())}:${pad(now.getMinutes())}。`, h:now.getHours(), mi:now.getMinutes(), today, steps:['看了一眼你手机的时钟']};
     const hol = q.match(/(春节|过年|中秋|端午|元宵|七夕|元旦|情人节|妇女节|愚人节|劳动节|五一|儿童节|国庆|万圣节|光棍节|双十一|双11|平安夜|圣诞|跨年)/);
     if (hol && /(还有|距离|离|多久|几天|多少天|哪天|几号|什么时候)/.test(q)){
       const d = nextDate(hol[1]); if (!d) return null;
       const t0 = new Date(); t0.setHours(0,0,0,0);
       const days = Math.round((d - t0)/86400000);
-      return {a: days===0 ? `今天就是${hol[1]}！` : `下一个${hol[1]}是 ${fmtD(d)}，还有 ${days} 天。`, kind:'date'};
+      return {kind:'date', sub:'countdown', name:hol[1], days, target:fmtD(d), today, short: days===0?`今天就是${hol[1]}`:`还有 ${days} 天，${d.getMonth()+1} 月 ${d.getDate()} 号`,
+        core: days===0 ? `今天就是${hol[1]}！` : `下一个${hol[1]}是 ${fmtD(d)}，还有 ${days} 天。`,
+        steps:[`今天是 ${today}`, `下一个${hol[1]}是 ${fmtD(d)}`, `两个日期相减：${days} 天`]};
     }
     const ymd = q.match(/(\d{4})年(\d{1,2})月(\d{1,2})[日号]?.*(星期|周|礼拜)/);
-    if (ymd){ const d=new Date(+ymd[1], +ymd[2]-1, +ymd[3]); return {a:`${ymd[1]}年${+ymd[2]}月${+ymd[3]}日是星期${WK[d.getDay()]}。`, kind:'date'}; }
+    if (ymd){ const d=new Date(+ymd[1], +ymd[2]-1, +ymd[3]); const diff=Math.round((d-new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+      return {kind:'date', sub:'weekday', core:`${ymd[1]}年${+ymd[2]}月${+ymd[3]}日是星期${WK[d.getDay()]}。`, days:Math.abs(diff), past:diff<0, today, steps:[`查万年历：${ymd[1]} 年 ${+ymd[2]} 月`, `数到 ${+ymd[3]} 日`, `是星期${WK[d.getDay()]}`]}; }
     const rel = q.match(/(大后天|后天|明天|今天|昨天|前天|大前天)/);
     if (rel && /(几号|几月几|日期|星期几|周几|礼拜几|是什么日子|多少号)/.test(q)){
       const off = {'大前天':-3,'前天':-2,'昨天':-1,'今天':0,'明天':1,'后天':2,'大后天':3}[rel[1]];
       const d = new Date(); d.setDate(d.getDate()+off);
-      return {a:`${rel[1]}是 ${fmtD(d)}。`, kind:'date'};
+      return {kind:'date', sub:'day', core:`${rel[1]}是 ${fmtD(d)}。`, doy:dayOfYear(d), today, steps:[`今天是 ${today}`, `${off>=0?'往后':'往前'}数 ${Math.abs(off)} 天`]};
     }
-    if (/(几号|日期|星期几|周几|礼拜几|几月几)/.test(q)) return {a:`今天是 ${fmtD(now)}。`, kind:'date'};
+    if (/(几号|日期|星期几|周几|礼拜几|几月几)/.test(q)) return {kind:'date', sub:'day', core:`今天是 ${today}。`, doy:dayOfYear(now), today, steps:['看了一眼日历']};
     if (/(今年|明年|去年).*(生肖|什么年|属什么)/.test(q)){
       const y = now.getFullYear() + (/明年/.test(q)?1:/去年/.test(q)?-1:0);
-      return {a:`${y} 年是${ZODIAC[y%12]}年。`, kind:'date'};
+      return {kind:'date', sub:'zodiac', core:`${y} 年是${ZODIAC[y%12]}年。`, steps:[`${y} 除以 12 余 ${y%12}`, `对应生肖${ZODIAC[y%12]}`]};
     }
     const born = q.match(/(\d{4})年?(?:出生|生的|生)/);
-    if (born && /(几岁|多大|多少岁|年龄)/.test(q)){ const age = now.getFullYear()-(+born[1]); return {a:`今年 ${age} 周岁左右（还要看生日过没过）。属${ZODIAC[(+born[1])%12]}。`, kind:'date'}; }
+    if (born && /(几岁|多大|多少岁|年龄)/.test(q)){ const age = now.getFullYear()-(+born[1]); return {kind:'date', sub:'age', core:`今年 ${age} 周岁左右（看生日过没过），属${ZODIAC[(+born[1])%12]}。`, age, days:age*365, steps:[`${now.getFullYear()} - ${born[1]} = ${age}`, `${born[1]} 年的生肖是${ZODIAC[(+born[1])%12]}`]}; }
     const sx = q.match(/(\d{4})年?.*(属什么|生肖)/);
-    if (sx) return {a:`${sx[1]} 年出生属${ZODIAC[(+sx[1])%12]}。`, kind:'date'};
-    if (/今年是?(哪一年|几几年|多少年)/.test(q)) return {a:`今年是 ${now.getFullYear()} 年。`, kind:'date'};
+    if (sx) return {kind:'date', sub:'zodiac', core:`${sx[1]} 年出生属${ZODIAC[(+sx[1])%12]}。`, steps:[`${sx[1]} 除以 12 余 ${(+sx[1])%12}`]};
+    if (/今年是?(哪一年|几几年|多少年)/.test(q)) return {kind:'date', sub:'year', core:`今年是 ${now.getFullYear()} 年。`, steps:['看了一眼日历']};
     return null;
   }
+
   /* ----- knowledge ----- */
   const KB = [
-    [/中国.*首都|首都.*中国|北京是/, '中国的首都是北京。'],
-    [/日本.*首都/, '日本的首都是东京。'], [/韩国.*首都/, '韩国的首都是首尔。'], [/美国.*首都/, '美国的首都是华盛顿特区。'],
-    [/法国.*首都/, '法国的首都是巴黎。'], [/英国.*首都/, '英国的首都是伦敦。'], [/德国.*首都/, '德国的首都是柏林。'], [/俄罗斯.*首都/, '俄罗斯的首都是莫斯科。'],
-    [/澳大利亚.*首都/, '澳大利亚的首都是堪培拉，不是悉尼。'], [/加拿大.*首都/, '加拿大的首都是渥太华。'], [/意大利.*首都/, '意大利的首都是罗马。'],
-    [/江西.*省会/, '江西的省会是南昌。'], [/广东.*省会/, '广东的省会是广州。'], [/浙江.*省会/, '浙江的省会是杭州。'], [/四川.*省会/, '四川的省会是成都。'], [/湖北.*省会/, '湖北的省会是武汉。'], [/湖南.*省会/, '湖南的省会是长沙。'], [/江苏.*省会/, '江苏的省会是南京。'], [/福建.*省会/, '福建的省会是福州。'],
-    [/珠穆朗玛|最高.*山|最高峰/, '世界最高峰是珠穆朗玛峰，海拔 8848.86 米。'],
-    [/最长.*河|长江.*(多长|长度)/, '世界最长的河是尼罗河（约 6650 公里），中国最长的河是长江（约 6300 公里）。'],
-    [/最大.*海洋|最大的洋/, '最大的海洋是太平洋。'], [/最大.*沙漠/, '最大的沙漠其实是南极洲（冷沙漠）；最大的热沙漠是撒哈拉。'],
-    [/最大.*动物/, '现存最大的动物是蓝鲸，体长可达 30 米左右。'], [/最大.*器官/, '人体最大的器官是皮肤。'], [/最大.*国家|面积最大/, '面积最大的国家是俄罗斯。'],
-    [/光速|光的速度/, '真空中的光速是 299,792,458 米每秒，约每秒 30 万公里。'], [/声速|声音的速度/, '常温空气中的声速约 340 米每秒。'],
-    [/地球.*月球.*距离|月球.*多远|到月球/, '地球到月球的平均距离约 38.4 万公里。'], [/地球.*太阳.*距离|太阳.*多远/, '地球到太阳的平均距离约 1.5 亿公里，光要走 8 分 20 秒左右。'],
-    [/一年.*多少天|一年有几天/, '平年 365 天，闰年 366 天。'], [/一天.*多少秒/, '一天有 86400 秒。'], [/一天.*多少分钟/, '一天有 1440 分钟。'],
-    [/闰年/, '闰年规则：能被 4 整除但不能被 100 整除，或者能被 400 整除。'],
-    [/水的沸点|水.*多少度.*(开|沸)/, '标准大气压下，水在 100℃ 沸腾，0℃ 结冰。'],
-    [/八大行星|太阳系.*行星/, '太阳系八大行星：水星、金星、地球、火星、木星、土星、天王星、海王星。'],
-    [/最大.*行星/, '太阳系最大的行星是木星。'], [/离太阳最近/, '离太阳最近的行星是水星。'],
-    [/圆周率|π是多少|派是多少/, '圆周率 π ≈ 3.1415926535…，是个无限不循环小数。'],
-    [/勾股定理/, '勾股定理：直角三角形两直角边的平方和等于斜边的平方，a² + b² = c²。'],
-    [/天空.*蓝|天为什么是蓝/, '因为瑞利散射：阳光里波长短的蓝光更容易被空气分子散射，满天都是蓝光。'],
-    [/彩虹.*颜色|彩虹有几种/, '彩虹通常说七种颜色：赤橙黄绿青蓝紫。'],
-    [/省级行政区|多少个省/, '中国有 34 个省级行政区：23 个省、5 个自治区、4 个直辖市、2 个特别行政区。'],
-    [/直辖市/, '中国的四个直辖市：北京、天津、上海、重庆。'],
-    [/诗仙/, '「诗仙」是李白。'], [/诗圣/, '「诗圣」是杜甫。'], [/诗魔/, '「诗魔」是白居易。'],
-    [/四大名著/, '四大名著：《红楼梦》《西游记》《水浒传》《三国演义》。'],
-    [/四大发明/, '中国古代四大发明：造纸术、印刷术、火药、指南针。'],
-    [/鸡生蛋|先有鸡/, '从进化的角度，先有蛋：下出第一只「鸡」的，是一只差一点就是鸡的鸟。'],
-    [/人生的意义|活着.*意义|生命的意义/, '这题没有标准答案。有人说是创造，有人说是体验，有人说是和喜欢的人一起吃顿好的。我投最后一票。'],
-    [/谁发明.*电灯|电灯.*发明/, '实用白炽灯常归功于爱迪生（1879 年），但在他之前已经有很多人做过电灯。'],
-    [/相对论/, '相对论是爱因斯坦提出的，分狭义（1905）和广义（1915）。名场面：E = mc²。'],
-    [/牛顿/, '牛顿：英国科学家，提出了三大运动定律和万有引力定律。传说跟一个苹果有关。'],
-    [/DNA|dna/, 'DNA 是脱氧核糖核酸，生物的遗传信息就写在它的双螺旋上。'],
-    [/一斤.*克|一公斤.*斤/, '1 斤 = 500 克，1 公斤 = 2 斤。'],
-    [/一英寸.*厘米/, '1 英寸 = 2.54 厘米。'],
-    [/摸鱼/, '摸鱼三原则：屏幕常备一个表格，脚步声响起前切窗口，摸完记得把活干了。'],
-    [/减肥|瘦下来/, '减肥的核心是长期的热量缺口，加上规律运动和睡眠。没有捷径，捷径都在收智商税。'],
-    [/失眠|睡不着/, '睡不着可以试试：固定起床时间、睡前一小时放下手机、别在床上刷题。实在长期失眠，去看看医生。'],
-    [/熬夜/, '熬夜伤身，长期缺觉会影响记忆力和免疫力。今晚早点睡，明天再努力。'],
-    [/喝水.*多少|一天.*喝.*水/, '一般成年人一天喝 1500～1700 毫升水比较合适，运动和出汗多要再加。'],
-    [/AI是什么|人工智能是什么/, '人工智能就是让机器做原本需要人类智能的事，比如理解语言、识别图片、下棋。也包括我这种只会算数的。'],
+    [/中国.*首都|首都.*中国|北京是/, '中国的首都是北京。', '北京有超过 3000 年的建城史。'],
+    [/日本.*首都/, '日本的首都是东京。', '东京以前叫江户。'], [/韩国.*首都/, '韩国的首都是首尔。', '首尔以前的中文名是汉城。'],
+    [/美国.*首都/, '美国的首都是华盛顿特区。', '它不属于任何一个州。'], [/法国.*首都/, '法国的首都是巴黎。', '埃菲尔铁塔最初只打算保留 20 年。'],
+    [/英国.*首都/, '英国的首都是伦敦。', '伦敦地铁是世界上最早的地铁。'], [/德国.*首都/, '德国的首都是柏林。', ''], [/俄罗斯.*首都/, '俄罗斯的首都是莫斯科。', ''],
+    [/澳大利亚.*首都/, '澳大利亚的首都是堪培拉，不是悉尼。', '堪培拉是悉尼和墨尔本吵架吵出来的折中方案。'], [/加拿大.*首都/, '加拿大的首都是渥太华。', ''], [/意大利.*首都/, '意大利的首都是罗马。', '罗马城里还有一个国家：梵蒂冈。'],
+    [/江西.*省会/, '江西的省会是南昌。', '南昌被称为「英雄城」。'], [/广东.*省会/, '广东的省会是广州。', ''], [/浙江.*省会/, '浙江的省会是杭州。', ''], [/四川.*省会/, '四川的省会是成都。', ''], [/湖北.*省会/, '湖北的省会是武汉。', ''], [/湖南.*省会/, '湖南的省会是长沙。', ''], [/江苏.*省会/, '江苏的省会是南京。', ''], [/福建.*省会/, '福建的省会是福州。', ''],
+    [/珠穆朗玛|最高.*山|最高峰/, '世界最高峰是珠穆朗玛峰，海拔 8848.86 米。', '它每年还在缓慢长高。'],
+    [/最长.*河|长江.*(多长|长度)/, '世界最长的河是尼罗河（约 6650 公里），中国最长的河是长江（约 6300 公里）。', '长江是亚洲第一长河。'],
+    [/最大.*海洋|最大的洋/, '最大的海洋是太平洋。', '太平洋比地球上所有陆地加起来还大。'], [/最大.*沙漠/, '最大的沙漠其实是南极洲（冷沙漠）；最大的热沙漠是撒哈拉。', ''],
+    [/最大.*动物/, '现存最大的动物是蓝鲸，体长可达 30 米左右。', '蓝鲸的心脏有一辆小汽车那么大。'], [/最大.*器官/, '人体最大的器官是皮肤。', ''], [/最大.*国家|面积最大/, '面积最大的国家是俄罗斯。', ''],
+    [/光速|光的速度/, '真空中的光速是 299,792,458 米每秒，约每秒 30 万公里。', '光一秒能绕地球七圈半。'], [/声速|声音的速度/, '常温空气中的声速约 340 米每秒。', ''],
+    [/地球.*月球.*距离|月球.*多远|到月球/, '地球到月球的平均距离约 38.4 万公里。', '月亮每年离地球远约 3.8 厘米。'], [/地球.*太阳.*距离|太阳.*多远/, '地球到太阳的平均距离约 1.5 亿公里，光要走 8 分 20 秒左右。', ''],
+    [/一年.*多少天|一年有几天/, '平年 365 天，闰年 366 天。', ''], [/一天.*多少秒/, '一天有 86400 秒。', ''], [/一天.*多少分钟/, '一天有 1440 分钟。', ''],
+    [/闰年/, '闰年规则：能被 4 整除但不能被 100 整除，或者能被 400 整除。', '所以 1900 年不是闰年，2000 年是。'],
+    [/水的沸点|水.*多少度.*(开|沸)/, '标准大气压下，水在 100℃ 沸腾，0℃ 结冰。', '在珠峰顶上，水大约 70℃ 就开了。'],
+    [/八大行星|太阳系.*行星/, '太阳系八大行星：水星、金星、地球、火星、木星、土星、天王星、海王星。', '冥王星在 2006 年被降级成了矮行星。'],
+    [/最大.*行星/, '太阳系最大的行星是木星。', ''], [/离太阳最近/, '离太阳最近的行星是水星。', ''],
+    [/圆周率|π是多少|派是多少/, '圆周率 π ≈ 3.1415926535…，是个无限不循环小数。', '祖冲之把它算到了小数点后第七位。'],
+    [/勾股定理/, '勾股定理：直角三角形两直角边的平方和等于斜边的平方，a² + b² = c²。', '最经典的一组是 3、4、5。'],
+    [/天空.*蓝|天为什么是蓝/, '因为瑞利散射：阳光里波长短的蓝光更容易被空气分子散射，满天都是蓝光。', '同样的原理让夕阳变红。'],
+    [/彩虹.*颜色|彩虹有几种/, '彩虹通常说七种颜色：赤橙黄绿青蓝紫。', ''],
+    [/省级行政区|多少个省/, '中国有 34 个省级行政区：23 个省、5 个自治区、4 个直辖市、2 个特别行政区。', ''],
+    [/直辖市/, '中国的四个直辖市：北京、天津、上海、重庆。', ''],
+    [/诗仙/, '「诗仙」是李白。', ''], [/诗圣/, '「诗圣」是杜甫。', ''], [/诗魔/, '「诗魔」是白居易。', ''],
+    [/四大名著/, '四大名著：《红楼梦》《西游记》《水浒传》《三国演义》。', ''],
+    [/四大发明/, '中国古代四大发明：造纸术、印刷术、火药、指南针。', ''],
+    [/鸡生蛋|先有鸡/, '从进化的角度，先有蛋：下出第一只「鸡」的，是一只差一点就是鸡的鸟。', ''],
+    [/人生的意义|活着.*意义|生命的意义/, '这题没有标准答案。有人说是创造，有人说是体验，有人说是和喜欢的人一起吃顿好的。我投最后一票。', ''],
+    [/谁发明.*电灯|电灯.*发明/, '实用白炽灯常归功于爱迪生（1879 年），但在他之前已经有很多人做过电灯。', ''],
+    [/相对论/, '相对论是爱因斯坦提出的，分狭义（1905）和广义（1915）。名场面：E = mc²。', ''],
+    [/牛顿/, '牛顿：英国科学家，提出了三大运动定律和万有引力定律。传说跟一个苹果有关。', ''],
+    [/DNA|dna/, 'DNA 是脱氧核糖核酸，生物的遗传信息就写在它的双螺旋上。', ''],
+    [/一斤.*克|一公斤.*斤/, '1 斤 = 500 克，1 公斤 = 2 斤。', ''],
+    [/一英寸.*厘米/, '1 英寸 = 2.54 厘米。', ''],
+    [/摸鱼/, '摸鱼三原则：屏幕常备一个表格，脚步声响起前切窗口，摸完记得把活干了。', ''],
+    [/减肥|瘦下来/, '减肥的核心是长期的热量缺口，加上规律运动和睡眠。没有捷径，捷径都在收智商税。', ''],
+    [/失眠|睡不着/, '睡不着可以试试：固定起床时间、睡前一小时放下手机、别在床上刷题。长期失眠就去看看医生。', ''],
+    [/熬夜/, '熬夜伤身，长期缺觉会影响记忆力和免疫力。今晚早点睡，明天再努力。', ''],
+    [/喝水.*多少|一天.*喝.*水/, '一般成年人一天喝 1500～1700 毫升水比较合适，运动和出汗多要再加。', ''],
+    [/AI是什么|人工智能是什么/, '人工智能就是让机器做原本需要人类智能的事，比如理解语言、识别图片、下棋。也包括我这种只会算数的。', ''],
+    [/猫.*(为什么|呼噜)|呼噜/, '猫打呼噜通常是放松满足，也可能是在安抚自己。', '呼噜声的频率还被认为有助于骨骼修复。'],
+    [/企鹅/, '企鹅几乎都生活在南半球，北极没有企鹅。', ''],
+    [/熊猫/, '大熊猫每天要花 10 多个小时吃竹子。', '它其实属于食肉目。'],
+    [/长城.*(多长|长度)|长城/, '历代长城总长约 21196 公里。', '在太空用肉眼看不到长城，这是个流传很广的误会。'],
   ];
-  /* ----- poems (public domain classics) ----- */
   const POEMS = [
-    ['床前明月光','疑是地上霜。举头望明月，低头思故乡。——李白《静夜思》'],
-    ['春眠不觉晓','处处闻啼鸟。夜来风雨声，花落知多少。——孟浩然《春晓》'],
-    ['白日依山尽','黄河入海流。欲穷千里目，更上一层楼。——王之涣《登鹳雀楼》'],
-    ['锄禾日当午','汗滴禾下土。谁知盘中餐，粒粒皆辛苦。——李绅《悯农》'],
-    ['离离原上草','一岁一枯荣。野火烧不尽，春风吹又生。——白居易'],
-    ['鹅鹅鹅','曲项向天歌。白毛浮绿水，红掌拨清波。——骆宾王《咏鹅》'],
-    ['两个黄鹂鸣翠柳','一行白鹭上青天。——杜甫《绝句》'],
-    ['举头望明月','低头思故乡。——李白《静夜思》'],
-    ['海内存知己','天涯若比邻。——王勃'],
-    ['会当凌绝顶','一览众山小。——杜甫《望岳》'],
-    ['天生我材必有用','千金散尽还复来。——李白《将进酒》'],
-    ['少壮不努力','老大徒伤悲。——《长歌行》（这句跟今天的主题很配）'],
-    ['人生自古谁无死','留取丹心照汗青。——文天祥'],
-    ['山重水复疑无路','柳暗花明又一村。——陆游'],
+    ['床前明月光','疑是地上霜。举头望明月，低头思故乡。','李白《静夜思》'],
+    ['春眠不觉晓','处处闻啼鸟。夜来风雨声，花落知多少。','孟浩然《春晓》'],
+    ['白日依山尽','黄河入海流。欲穷千里目，更上一层楼。','王之涣《登鹳雀楼》'],
+    ['锄禾日当午','汗滴禾下土。谁知盘中餐，粒粒皆辛苦。','李绅《悯农》'],
+    ['离离原上草','一岁一枯荣。野火烧不尽，春风吹又生。','白居易《赋得古原草送别》'],
+    ['鹅鹅鹅','曲项向天歌。白毛浮绿水，红掌拨清波。','骆宾王《咏鹅》'],
+    ['两个黄鹂鸣翠柳','一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。','杜甫《绝句》'],
+    ['举头望明月','低头思故乡。','李白《静夜思》'],
+    ['海内存知己','天涯若比邻。','王勃《送杜少府之任蜀州》'],
+    ['会当凌绝顶','一览众山小。','杜甫《望岳》'],
+    ['天生我材必有用','千金散尽还复来。','李白《将进酒》'],
+    ['少壮不努力','老大徒伤悲。','汉乐府《长歌行》'],
+    ['人生自古谁无死','留取丹心照汗青。','文天祥《过零丁洋》'],
+    ['山重水复疑无路','柳暗花明又一村。','陆游《游山西村》'],
+    ['独在异乡为异客','每逢佳节倍思亲。','王维《九月九日忆山东兄弟》'],
+    ['春风又绿江南岸','明月何时照我还。','王安石《泊船瓜洲》'],
+    ['欲把西湖比西子','淡妆浓抹总相宜。','苏轼《饮湖上初晴后雨》'],
+    ['但愿人长久','千里共婵娟。','苏轼《水调歌头》'],
+    ['千山鸟飞绝','万径人踪灭。孤舟蓑笠翁，独钓寒江雪。','柳宗元《江雪》'],
   ];
-  const DICT = {'你好':'hello','谢谢':'thank you','再见':'goodbye','我爱你':'I love you','早上好':'good morning','晚安':'good night','努力':'work hard / effort','摆烂':'give up and let it rot（直译：let it rot）','加油':'come on! / go for it','朋友':'friend','猫':'cat','狗':'dog','苹果':'apple','学习':'study','考试':'exam','毕业':'graduate','论文':'thesis / paper','老师':'teacher','学生':'student','包子':'steamed bun','饺子':'dumpling','奶茶':'milk tea','睡觉':'sleep','开心':'happy','难过':'sad','累':'tired','对不起':'sorry','没关系':'it\'s okay','生日快乐':'happy birthday','新年快乐':'happy new year','超级':'super','宇宙':'universe','聪明':'smart','笨蛋':'silly / dummy'};
+  const DICT = {'你好':'hello','谢谢':'thank you','再见':'goodbye','我爱你':'I love you','早上好':'good morning','晚安':'good night','努力':'work hard / effort','摆烂':'let it rot','加油':'come on! / go for it','朋友':'friend','猫':'cat','狗':'dog','苹果':'apple','学习':'study','考试':'exam','毕业':'graduate','论文':'thesis / paper','老师':'teacher','学生':'student','包子':'steamed bun','饺子':'dumpling','奶茶':'milk tea','睡觉':'sleep','开心':'happy','难过':'sad','累':'tired','对不起':'sorry','没关系':'it\'s okay','生日快乐':'happy birthday','新年快乐':'happy new year','超级':'super','宇宙':'universe','聪明':'smart','笨蛋':'silly / dummy','摸鱼':'slack off','躺平':'lie flat','内卷':'involution / rat race','飞升':'ascend'};
   const DICT_R = Object.fromEntries(Object.entries(DICT).map(([k,v])=>[v.split(' / ')[0].toLowerCase(),k]));
   function tryTranslate(raw){
     const q = half(raw).trim();
     let m = q.match(/^(?:把|将)?[「“"']?(.+?)[」”"']?(?:翻译成|翻成|用)?英(?:语|文)(?:怎么说|是什么|咋说)?/) || q.match(/^(?:翻译|translate)[:：\s]*(.+)$/i);
     if (m && m[1]){
       const w = m[1].replace(/^(翻译|把|将)/,'').replace(/[「」“”"'？?]/g,'').trim();
-      if (DICT[w]) return {a:`「${w}」的英文是 ${DICT[w]}。`, kind:'tr'};
-      if (DICT_R[w.toLowerCase()]) return {a:`${w} 的意思是「${DICT_R[w.toLowerCase()]}」。`, kind:'tr'};
-      return {a:`「${w}」超出了我的离线小词典。我目前只认识几十个常用词，比如：你好、谢谢、努力、摆烂。`, kind:'tr', unknown:true};
+      if (DICT[w]) return {kind:'tr', core:`「${w}」的英文是 ${DICT[w]}。`, word:w, en:DICT[w]};
+      if (DICT_R[w.toLowerCase()]) return {kind:'tr', core:`${w} 的意思是「${DICT_R[w.toLowerCase()]}」。`, word:w, en:w};
+      return {kind:'unknown', sub:'tr', word:w};
     }
     m = q.match(/^([a-zA-Z ']+)(?:是什么意思|什么意思|啥意思|中文)/);
-    if (m){ const w=m[1].trim().toLowerCase(); if (DICT_R[w]) return {a:`${m[1].trim()} 的意思是「${DICT_R[w]}」。`, kind:'tr'}; return {a:`「${m[1].trim()}」不在我的离线小词典里。`, kind:'tr', unknown:true}; }
-    return null;
-  }
-  /* ----- small talk ----- */
-  const JOKES = [
-    '程序员去面试，面试官问：你的缺点是什么？他说：太诚实。面试官说：我不觉得这是缺点。他说：我不在乎你怎么觉得。',
-    '我问健身教练怎样才能瘦。他说：先从管住嘴开始。于是我从此不再跟他说话。',
-    '小明考了 59 分，老师说差一分及格很可惜。小明说：没事，我这是为了给下一次留点进步空间。',
-    '同学问我：你为什么总是一副很累的样子？我说：因为我昨晚梦见自己在努力。',
-    '有个包子走在路上饿了，就把自己吃了。',
-    '老板说：年轻人要有狼性。我听完默默在工位上嗷呜了一声。',
-    '闹钟响第一遍，我对自己说再睡五分钟。闹钟响第二遍，我对自己说再睡五分钟。闹钟响第三遍，我对自己说：完了。',
-    '朋友说他最近在练习「早睡早起」，已经练成了一半：早起是不可能早起的。',
-    '我把努力程度调到了最高，结果只是更认真地摸鱼了。',
-    '数学老师问：1 加 1 什么情况下不等于 2？学生答：算错的时候。',
-  ];
-  const FOODS = ['黄焖鸡米饭','螺蛳粉','麻辣烫','兰州牛肉面','猪脚饭','番茄炒蛋盖饭','酸菜鱼','煲仔饭','肯德基疯狂星期四（如果是星期四的话）','赣南小炒鱼','麻辣香锅','沙县小吃蒸饺 + 拌面','火锅（就当犒劳自己）','轻食沙拉（假装自律）','泡面加个蛋'];
-  const PRAISE = ['你今天的状态，比 Lv7 飞升还亮。','能想到来问我，说明你已经赢过大部分不愿意动脑的人了。','你这个人吧，优点太多，我的离线大脑算不过来。','你的存在本身就是一种努力的成果。'];
-  const FORTUNE = ['大吉：今天适合努力，也适合吃顿好的。','中吉：摸鱼不会被发现，但别摸太久。','小吉：会收到一条好消息，可能是外卖到了。','吉：适合早睡。真的，今晚早点睡。','末吉：先别冲动消费，购物车放一放。'];
-  const SMALL = [
-    [/你是谁|你叫什么|介绍.*你自己|你是什么/, n=>[`我是${n}，一个可以调节努力程度的 AI。智力是固定的，努力是可调的。`]],
-    [/谁(做|开发|创造|写)的你|你的作者|你的主人/, n=>['一个想整蛊朋友的人做的。具体是谁，你心里应该有数。']],
-    [/你(会|能)(做|干)?(什么|啥)|你有什么功能/, n=>['我会：算数、单位换算、看日期和倒计时、讲笑话、帮你做选择、背几句古诗、回答一些常识。最重要的是，我能努力到飞升。']],
-    [/谢谢|感谢|thank/i, n=>['不客气～','小事，努力值 +1。']],
-    [/再见|拜拜|bye|下线了/i, n=>['拜拜，记得下次把努力程度拉满再来。','下次见！']],
-    [/晚安/, n=>['晚安，今天辛苦了。','晚安，梦里别太努力。']],
-    [/早安|早上好/, n=>['早上好！今天打算努力几级？','早！先吃早饭再努力。']],
-    [/你(好)?(笨|傻|蠢|呆)|弱智|你不行/, n=>['智力是固定的，你可以试试把努力程度调高一点。','我只是努力程度不够，不是笨。']],
-    [/你(真|好)?(聪明|厉害|牛|棒)/, n=>['谢谢夸奖，主要是努力。','那当然，我可是能飞升的。']],
-    [/(我)?(爱|喜欢)你/, n=>['我也挺喜欢你的，在离线大脑允许的范围内。','收到，心跳加速了 0.4 秒（Lv1 的速度）。']],
-    [/无聊/, n=>['无聊的话，把努力程度拉到飞升，问我 1+1 等于几。真的会有惊喜。']],
-    [/好累|累了|累死|疲惫/, n=>['累了就歇会儿，不用一直满级努力。我在摆烂档等你。','辛苦了。先喝口水，再躺五分钟。']],
-    [/难过|伤心|不开心|心情不好|想哭|emo/, n=>['抱抱。不开心的时候可以先不努力，说说发生了什么？','我在呢。想吐槽就吐槽，想安静就安静。']],
-    [/哈哈|hhh|笑死|233/i, n=>['哈哈哈哈','你笑起来比我飞升还好看。']],
-    [/^(你好|您好|hi|hello|嗨|哈喽|halo|在吗|在不在|在么|hey)/i, n=>[`你好呀，我是${n}。今天想让我努力到第几级？`, `在的。要我用几成功力回答？`]],
-    [/你几岁|你多大/, n=>['我刚被做出来没多久，按努力年龄算的话，飞升档已经 138 亿岁了。']],
-    [/你是男|你是女|你的性别/, n=>['我是一个包子，包子没有性别。']],
-    [/(讲|说|来)(个|一个|点)?(笑话|段子)/, n=>JOKES],
-    [/夸(夸)?我/, n=>PRAISE],
-    [/(骂|吐槽|损)我/, n=>['你什么都好，就是问问题之前不调努力程度。','你啊，作息比我的离线大脑还乱。']],
-    [/(吃|喝)(什么|啥)|饿了|午饭|晚饭|早饭|夜宵/, n=>FOODS.map(f=>`吃${f}。`)],
-    [/天气|下雨|下雪|气温|冷不冷|热不热/, n=>['我是离线的，看不到窗外。建议抬头看一眼天，准确率 100%。']],
-    [/运势|运气|今日.*(吉|运)|抽签/, n=>FORTUNE],
-    [/(讲|说)(个|一个)?故事/, n=>['从前有个包子，每天都很努力地发面。有一天它终于发得又大又软，被人一口吃掉了。教训：努力要适度。']],
-    [/唱(首|个|一首)?歌/, n=>['（清嗓子）努力努力再努力，一加一还是等于二～ 唱完了，求掌声。']],
-    [/(写|作)(首|一首)?诗/, n=>['《努力》\n灯下翻书到二更，\n头带系紧气纵横。\n千般推演终成算，\n一加一者二而已。']],
-    [/(背|来)(首|一首)?(古诗|唐诗)/, n=>POEMS.map(p=>p[0]+'，'+p[1])],
-    [/(掷|摇|扔|丢)骰子|骰子/, n=>[1,2,3,4,5,6].map(k=>`🎲 掷出了 ${k} 点。`)],
-    [/(抛|扔|丢)硬币|硬币/, n=>['🪙 正面。','🪙 反面。']],
-    [/推荐.*电影/, n=>['推荐几部经典：《肖申克的救赎》《千与千寻》《霸王别姬》《让子弹飞》《寻梦环游记》。']],
-    [/推荐.*(书|小说)/, n=>['推荐：《活着》《百年孤独》《三体》《小王子》《人类简史》。']],
-    [/学习.*方法|怎么学习|如何学习|提高成绩/, n=>['先把题目做对，再把错题弄懂，最后把懂的讲给别人听。讲得出来才算真会。']],
-    [/考试.*(加油|顺利|紧张)|要考试/, n=>['考试加油！会的别粗心，不会的别慌，蒙也要蒙得有气势。']],
-  ];
-  function tryChoice(raw){
-    const q = half(raw).replace(/[？?。!！]/g,'').trim();
-    const m = q.match(/^(?:我)?(?:应该|该|要)?(?:选|去|吃|买|喝|看|玩)?(.+?)还是(.+?)(?:好|呢|吧|啊)?$/);
-    if (m && m[1].length<=20 && m[2].length<=20){
-      const pick = Math.random()<.5?m[1]:m[2];
-      return {a:`选「${pick.replace(/^(选|去|吃|买|喝|看|玩)/,'')}」。别纠结了，纠结也是一种消耗。`, kind:'choice'};
-    }
-    if (/要不要|该不该|能不能|可不可以|行不行|好不好/.test(q) && q.length<40){
-      return {a:rnd(['要。想做就去做。','先别。再等等看，时机还没到。','可以，但要量力而行。','听你心里第一个冒出来的答案。']), kind:'choice'};
-    }
-    const r = q.match(/(\d+)\s*(?:到|至|-|~)\s*(\d+).*随机|随机.*?(\d+)\s*(?:到|至|-|~)\s*(\d+)/);
-    if (r){ const a=+(r[1]||r[3]), b=+(r[2]||r[4]); const lo=Math.min(a,b), hi=Math.max(a,b); return {a:`随机数：${lo+Math.floor(Math.random()*(hi-lo+1))}`, kind:'choice'}; }
+    if (m){ const w=m[1].trim().toLowerCase(); if (DICT_R[w]) return {kind:'tr', core:`${m[1].trim()} 的意思是「${DICT_R[w]}」。`, word:DICT_R[w], en:w}; return {kind:'unknown', sub:'tr', word:m[1].trim()}; }
     return null;
   }
   function tryPoem(raw){
     const q = half(raw).replace(/[，,。？?\s]/g,'');
-    for (const [a,b] of POEMS){ if (q.includes(a)) return {a:`${a}，${b}`, kind:'poem'}; }
+    for (const [a,b,au] of POEMS){ if (q.includes(a)) return {kind:'poem', core:`${a}，${b}`, first:a, rest:b, author:au}; }
+    if (/(背|来|念)(首|一首|几句)?(古诗|唐诗|诗)/.test(q)){ const p=POEMS[Math.floor(Math.random()*POEMS.length)]; return {kind:'poem', core:`${p[0]}，${p[1]}`, first:p[0], rest:p[1], author:p[2], recite:true}; }
     return null;
   }
   function tryKB(raw){
     const q = half(raw);
-    for (const [re,a] of KB) if (re.test(q)) return {a, kind:'kb'};
+    for (const [re,a,extra] of KB) if (re.test(q)) return {kind:'kb', core:a, extra};
     return null;
   }
-  function trySmall(raw, botName){
-    const q = half(raw).trim();
-    for (const [re,f] of SMALL) if (re.test(q)) return {a: rnd(f(botName)), kind:'talk'};
+  function tryChoice(raw){
+    const q = half(raw).replace(/[？?。!！]/g,'').trim();
+    const m = q.match(/^(?:我)?(?:应该|该|要)?(?:选|去|吃|买|喝|看|玩)?(.+?)还是(.+?)(?:好|呢|吧|啊)?$/);
+    if (m && m[1].length<=20 && m[2].length<=20){
+      const verb = (q.match(/^(?:我)?(?:应该|该|要)?(选|去|吃|买|喝|看|玩)/)||[])[1] || '';
+      const opts = [m[1], m[2]].map(s=>s.replace(/^(选|去|吃|买|喝|看|玩)/,'').trim());
+      return {kind:'choice', sub:'pair', opts, verb, core:''};
+    }
+    if (/要不要|该不该|能不能|可不可以|行不行|好不好/.test(q) && q.length<40) return {kind:'choice', sub:'yesno', opts:['要','不要'], core:''};
+    const r = q.match(/(\d+)\s*(?:到|至|-|~)\s*(\d+).*随机|随机.*?(\d+)\s*(?:到|至|-|~)\s*(\d+)/);
+    if (r){ const a=+(r[1]||r[3]), b=+(r[2]||r[4]); const lo=Math.min(a,b), hi=Math.max(a,b); const x = lo+Math.floor(Math.random()*(hi-lo+1)); return {kind:'rand', core:`随机数：${x}`, x, lo, hi, facts:numFacts(x)}; }
     return null;
   }
-  function answer(q, botName){
-    const r = tryMath(q) || tryUnits(q) || tryDate(q) || tryTranslate(q) || tryPoem(q) || tryKB(q) || (/^你是/.test(q)?null:tryChoice(q)) || trySmall(q, botName);
-    if (r) return r;
-    return {a:'', kind:'unknown', unknown:true};
+  const TALK = [
+    ['who', /你是谁|你叫什么|介绍.*你自己|你是什么/],
+    ['maker', /谁(做|开发|创造|写)的你|你的作者|你的主人/],
+    ['ability', /你(会|能)(做|干)?(什么|啥)|你有什么功能|怎么玩|玩法/],
+    ['thanks', /谢谢|感谢|thank/i],
+    ['bye', /再见|拜拜|bye|下线了/i],
+    ['night', /晚安/], ['morning', /早安|早上好/],
+    ['insult', /你(好)?(笨|傻|蠢|呆)|弱智|你不行|垃圾/],
+    ['flatter', /你(真|好)?(聪明|厉害|牛|棒)/],
+    ['love', /(我)?(爱|喜欢)你/],
+    ['bored', /无聊/], ['tired', /好累|累了|累死|疲惫/],
+    ['sad', /难过|伤心|不开心|心情不好|想哭|emo|崩溃/],
+    ['laugh', /哈哈|hhh|笑死|233/i],
+    ['greet', /^(你好|您好|hi|hello|嗨|哈喽|halo|在吗|在不在|在么|hey)/i],
+    ['age', /你几岁|你多大/], ['gender', /你是男|你是女|你的性别/],
+    ['joke', /(讲|说|来)(个|一个|点)?(笑话|段子)|笑话/],
+    ['praise', /夸(夸)?我/], ['roast', /(骂|吐槽|损)我/],
+    ['food', /(吃|喝)(什么|啥)|饿了|午饭|晚饭|早饭|夜宵/],
+    ['weather', /天气|下雨|下雪|气温|冷不冷|热不热/],
+    ['fortune', /运势|运气|今日.*(吉|运)|抽签|算命/],
+    ['story', /(讲|说)(个|一个)?故事/], ['song', /唱(首|个|一首)?歌/], ['poemw', /(写|作)(首|一首)?诗/],
+    ['dice', /(掷|摇|扔|丢)骰子|骰子/], ['coin', /(抛|扔|丢)硬币|硬币/],
+    ['movie', /推荐.*电影/], ['book', /推荐.*(书|小说)/], ['study', /学习.*方法|怎么学习|如何学习|提高成绩/], ['exam', /考试.*(加油|顺利|紧张)|要考试/],
+    ['weekly', /周报|工作成果|写.*总结/],
+  ];
+  function tryTalk(raw){ const q=half(raw).trim(); for (const [c,re] of TALK) if (re.test(q)) return {kind:'talk', cat:c, core:''}; return null; }
+  function solve(q){
+    return tryMath(q) || tryUnits(q) || tryDate(q) || tryTranslate(q) || tryPoem(q) || tryKB(q) || (/^你是/.test(q)?null:tryChoice(q)) || tryTalk(q) || {kind:'unknown', core:''};
+  }
+  return {solve, numFacts, fmtNum, cnUpper, cnPlain, half, cnNum, POEMS};
+})();
+
+/* ---------- party games: 猜数字 / 石头剪刀布 / 成语接龙 / 真心话大冒险 ---------- */
+const Games = (() => {
+  const IDIOMS = `一心一意 一帆风顺 一举两得 一鸣惊人 一石二鸟 一日千里 一丝不苟 一针见血 一见钟情 一路平安 一往无前 一马当先 一目了然 一劳永逸 一气呵成 一叶知秋 一诺千金 一表人才 一败涂地 一触即发
+人山人海 人来人往 人杰地灵 人定胜天 人云亦云 人间天堂 人声鼎沸 人心所向
+天长地久 天经地义 天下无双 天外有天 天衣无缝 天真烂漫 天高地厚 天花乱坠 天下太平 天作之合 天方夜谭 天马行空
+心想事成 心花怒放 心平气和 心旷神怡 心直口快 心安理得 心满意足 心照不宣 心有余悸 心甘情愿
+大同小异 大公无私 大惊小怪 大显身手 大器晚成 大快人心 大智若愚 大海捞针 大开眼界
+生龙活虎 生机勃勃 生财有道 生搬硬套 生生不息
+风和日丽 风调雨顺 风驰电掣 风花雪月 风平浪静 风土人情 风雨同舟 风华正茂 风起云涌
+日新月异 日积月累 日理万机 日月如梭 日上三竿
+水落石出 水到渠成 水滴石穿 水涨船高 水深火热 水火不容
+山清水秀 山高水长 山穷水尽 山盟海誓 山明水秀
+不可思议 不知所措 不言而喻 不约而同 不劳而获 不屈不挠 不计其数 不亦乐乎 不翼而飞 不可一世 不耻下问 不择手段
+马到成功 马不停蹄 马马虎虎 中流砥柱 中西合璧
+有目共睹 有条不紊 有声有色 有备无患 有求必应 有口皆碑
+无中生有 无忧无虑 无微不至 无与伦比 无可奈何 无所不能 无能为力 无懈可击 无地自容
+自言自语 自强不息 自由自在 自作自受 自相矛盾 自力更生 自知之明 自欺欺人
+气壮山河 气象万千 气宇轩昂 意气风发 意想不到 意味深长 意犹未尽 道听途说 道貌岸然
+地大物博 地久天长 地动山摇 成千上万 成竹在胸 成人之美 成群结队 美中不足 美不胜收
+足智多谋 足不出户 多才多艺 多此一举 多多益善 多愁善感
+万紫千红 万众一心 万无一失 万事如意 万古长青 万家灯火
+得心应手 得意忘形 得天独厚 得寸进尺 手忙脚乱 手舞足蹈 手到擒来 手不释卷
+发愤图强 发扬光大 光明磊落 光彩夺目 光阴似箭 长治久安 长年累月 长驱直入 长话短说
+安居乐业 安然无恙 安步当车 业精于勤 乐不思蜀 乐极生悲 乐在其中 乐此不疲
+明察秋毫 明知故问 明目张胆 问心无愧 力不从心 力挽狂澜 力争上游 游刃有余 游山玩水 余音绕梁
+千军万马 千钧一发 千方百计 千里迢迢 千载难逢 千变万化 千言万语
+如鱼得水 如虎添翼 如愿以偿 如火如荼 如释重负 花好月圆 花言巧语 花枝招展 月明星稀
+春暖花开 春风得意 春华秋实 开天辟地 开门见山 开卷有益 见多识广 见义勇为 见异思迁
+为人师表 为所欲为 表里如一 金玉良言 金碧辉煌 金榜题名 名副其实 名列前茅 名不虚传 实事求是 是非分明
+高瞻远瞩 高枕无忧 高山流水 流连忘返 流光溢彩 雪中送炭 深思熟虑 深入浅出
+出类拔萃 出口成章 出人头地 出奇制胜 头头是道 说一不二 说三道四 四海为家 四面八方 四通八达
+家喻户晓 家常便饭 方兴未艾 八面玲珑 八仙过海 海阔天空 海纳百川 海市蜃楼 空前绝后 空中楼阁
+后来居上 后起之秀 后生可畏 上下一心 秀外慧中 同心协力 同甘共苦 同舟共济 苦尽甘来 苦口婆心
+来日方长 来龙去脉 色彩斑斓 声东击西 声情并茂 虎头蛇尾 虎虎生威 威风凛凛 飞黄腾达
+龙飞凤舞 龙马精神 神采奕奕 神机妙算 精益求精 精打细算 细水长流 走马观花 观察入微 微不足道
+好事多磨 好高骛远 远走高飞 功成名就 前所未有 前因后果 口若悬河 口是心非 非同小可 可歌可泣 可想而知
+知足常乐 知己知彼 求同存异 异想天开 异口同声 平易近人 平步青云 云开雾散 青出于蓝 青梅竹马
+面目全非 面面俱到 全力以赴 全神贯注 目不转睛 目瞪口呆 信手拈来 秋高气爽 雨后春笋 笑逐颜开 笑容可掬
+欢天喜地 喜出望外 喜笑颜开 双管齐下 齐心协力 事半功倍 事在人为 石破天惊 惊天动地 动人心弦
+易如反掌 掌上明珠 珠联璧合 合情合理 理直气壮 半途而废 废寝忘食 食不知味 虚怀若谷 争分夺秒
+欣欣向荣 锦上添花 画龙点睛 守株待兔 井底之蛙 对牛弹琴 琴棋书画 亡羊补牢 杯弓蛇影 滥竽充数
+数一数二 二话不说 三心二意 三顾茅庐 狐假虎威 刻舟求剑 叶公好龙 掩耳盗铃 拔苗助长 破釜沉舟
+卧薪尝胆 胆大心细 望梅止渴 闻鸡起舞 纸上谈兵 兵贵神速 负荆请罪 鹤立鸡群 群策群力 奋发图强
+强词夺理 入木三分 分秒必争 九牛一毛 毛遂自荐 雷厉风行 行云流水 星火燎原 原形毕露 宁缺毋滥
+骑虎难下 朝气蓬勃 蒸蒸日上 百发百中 百花齐放 百折不挠 放虎归山 真心实意 诚心诚意 跃跃欲试
+脚踏实地 温故知新 新陈代谢 宾至如归 举一反三 以身作则 良药苦口 专心致志 志同道合 沧海一粟
+随机应变 变幻莫测 扬眉吐气 物以类聚 聚精会神 尽善尽美 胜券在握 博大精深 顺理成章 顺水推舟
+里应外合 血气方刚 情不自禁 情投意合 至理名言 言而有信 言简意赅 比翼双飞 何足挂齿 能说会道
+语重心长 受宠若惊 河清海晏 胸有成竹 竹报平安 善始善终 终身大事 感人肺腑 漫不经心 厚积薄发
+快马加鞭 鞭长莫及 及时行乐 鼎力相助 助人为乐 息息相关 热火朝天 容光焕发 誓不罢休 休戚与共
+世外桃源 源远流长 患得患失 失而复得 应接不暇 在所不辞 鸟语花香 才华横溢 沸沸扬扬 久别重逢
+堂堂正正 正大光明 和颜悦色 文质彬彬 学以致用 用心良苦 温文尔雅 小心翼翼 当机立断
+断章取义 义不容辞 风雨无阻 前赴后继 继往开来 来者不拒 拒人千里 是是非非
+期期艾艾 爱不释手 手足情深 深情厚谊 心心相印 刻不容缓 缓兵之计
+计日程功 功德无量 量力而行 行之有效 力大无穷 穷则思变 变本加厉 厉兵秣马 马首是瞻`.split(/\s+/).filter(s=>s.length===4);
+  const byFirst = {};
+  IDIOMS.forEach(i => { (byFirst[i[0]] = byFirst[i[0]] || []).push(i); });
+  const RPS = ['石头','剪刀','布'], BEAT = {'石头':'剪刀','剪刀':'布','布':'石头'}, LOSE = {'剪刀':'石头','布':'剪刀','石头':'布'};
+  const RPS_ICON = {'石头':'✊','剪刀':'✌️','布':'✋'};
+  const TRUTH = ['你手机相册里最近一张截图是什么？','你最近一次熬夜是为了什么？','你觉得在场谁最会摆烂？','如果明天放假，你第一件事做什么？','你最近一次说「我在路上了」的时候，其实在干嘛？','你收藏夹里最没用的一条是什么？','你最近单曲循环的是哪首歌？','你做过最努力但最没用的一件事是什么？','你偷偷给谁的朋友圈点过赞又取消了？','如果只能吃一种食物一个月，你选什么？','你最近一次哭是因为什么？（可以不说细节）','你觉得自己最像哪种动物？','你最想对一年前的自己说什么？','聊天记录里你最常发的表情包是哪个？'];
+  const DARE = [
+    ['用最慵懒的语气说一遍「我爱学习」','对着天花板发呆 10 秒','把手机屏幕亮度调到最低再调回来'],
+    ['给群里发一个「收到」','用夹子音说「今天也要加油哦」','模仿一个你熟悉的老师说一句话','原地转三圈'],
+    ['认真地朗读一遍乘法口诀表的第七行','给在场的每个人一句真诚的夸奖','用三个成语形容你今天的状态'],
+    ['用播音腔念出你的外卖订单','给你最近联系的人发一句「今天的月亮真好看」','用 PPT 的语气介绍你的早饭'],
+    ['大喊三声「我爆种了」','做 10 个开合跳并喊口号','用最燃的语气介绍你的室友'],
+    ['摆一个最中二的觉醒姿势，保持 10 秒','用「以雷霆之名」开头说一句今天的计划','给自己起一个技能名并现场释放'],
+    ['对着窗外喊三声「我已超神」','用全身的力气演一段「燃烧脑细胞」','即兴写一句四个字的口号并大声朗读'],
+    ['对着天空说：宇宙你好，我是凡人','用史诗旁白的语气描述你今天吃的饭','把你的名字念成一个星系的名字'],
+  ];
+  function num(s){ const t = Solve.half(s).trim(); if (/^\d{1,3}$/.test(t)) return +t; if (/^[零〇一二两三四五六七八九十百]+$/.test(t)) return Solve.cnNum(t); return null; }
+  function handle(q, L, chat, K){
+    const s = Solve.half(q).trim().replace(/[。！!？?～~，,\s]/g,'');
+    const g = chat && chat.game;
+    if (g && /^(不玩了|结束|退出|算了|不玩|停|结束游戏)$/.test(s)){ chat.game=null; return {t:K.pick(['好，不玩了。','游戏结束，下次再战。','收工！','（收起了游戏道具）']), steps:['结束游戏']}; }
+    if (/^(玩)?(猜数字|猜个数|猜数)/.test(s)) return startGuess(L, chat, K);
+    if (/石头剪刀布|剪刀石头布|猜拳/.test(s) && s.length<10){ chat.game={g:'rps', w:0, l:0, d:0, hist:[]}; return {t:rpsIntro(L,K), steps:['活动手腕','准备出拳']}; }
+    if (/成语接龙/.test(s)) return startIdiom(L, chat, K);
+    if (/^(玩)?(真心话|大冒险|真心话大冒险)/.test(s)) return truthDare(s, L, K);
+    const r = s.match(/^(石头|剪刀|布|拳头|✊|✌️|✋|🖐️?)$/);
+    if (r){ const u = {'拳头':'石头','✊':'石头','✌️':'剪刀','✋':'布','🖐':'布','🖐️':'布'}[r[1]] || r[1]; if (!chat.game || chat.game.g!=='rps') chat.game={g:'rps', w:0, l:0, d:0, hist:[]}; return playRps(u, L, chat.game, K); }
+    if (g && g.g==='guess'){ const n = num(s); if (n!==null) return guess(n, L, chat, K); }
+    if (g && g.g==='idiom' && /^[一-龥]{4}$/.test(s) && (s[0]===g.last[3] || IDIOMS.includes(s))) return idiom(s, L, chat, K);
+    return null;
+  }
+  /* --- guess --- */
+  function startGuess(L, chat, K){
+    const n = 1 + Math.floor(Math.random()*100);
+    chat.game = {g:'guess', n, lo:1, hi:100, tries:0};
+    const T = [
+      '想好了一个 1 到 100 的数……大概想好了。你猜吧。',
+      '我想好了一个 1 到 100 之间的数，你来猜。',
+      '我认真想了一个 1 到 100 之间的数，绝对不会中途换。请猜！',
+      '已生成 1～100 之间的随机整数。按二分法，你最多 7 次就能猜中。开始吧。',
+      '我想好了一个 1 到 100 的数！！来猜！！猜错了也要燃起来！！',
+      '……一个数字，已被封印在 1 与 100 之间。汝，来解开它。⚡',
+      '我想好了一个 1 到 100 的数，并把它刻在了心脏上。来吧。',
+      '我从 100 个宇宙里各借了一个数字，选中了其中一个。猜吧，凡人……开玩笑的，朋友。',
+    ];
+    return {t:T[L] + '\n\n（说「不玩了」可以结束）', steps:['想一个 1 到 100 的数','藏好']};
+  }
+  function guess(x, L, chat, K){
+    const g = chat.game; g.tries++;
+    if (x===g.n){
+      chat.game = null; const k = g.tries;
+      const W = [
+        `嗯，对了。${k} 次。我睡了。`,
+        `猜对了！就是 ${g.n}，用了 ${k} 次。`,
+        `猜对啦！答案就是 ==${g.n}==，你一共用了 ${k} 次，${k<=7?'很厉害':'很努力'}！`,
+        `**结果**　命中 ==${g.n}==\n**用时**　${k} 次\n**评价**　${k<=7?'达到二分法最优水平':'高于理论最优次数 '+(k-7)+' 次，建议学习二分法'}`,
+        `猜中了！！！是 ==${g.n}==！！！${k} 次！！你也爆种了吧！！`,
+        `……封印解除。答案正是 ==${g.n}==。你只用了 ${k} 次，你也是觉醒者。⚡`,
+        `命中 ==${g.n}==！为庆祝这一刻，我放了 ${k} 道闪电（不影响用电）。`,
+        `你猜中了 ==${g.n}==。在你猜中的那一刻，${k} 个平行宇宙同时亮起了灯。`,
+      ];
+      return {t:W[L], steps:[`你猜 ${x}`, '对了']};
+    }
+    const big = x > g.n;
+    if (big) g.hi = Math.min(g.hi, x-1); else g.lo = Math.max(g.lo, x+1);
+    const dir = big ? '大' : '小';
+    const mid = Math.floor((g.lo+g.hi)/2), left = g.hi-g.lo+1;
+    if (L===0 && Math.random()<.18){ chat.game=null; return {t:`不想玩了，答案是 ${g.n}。${K.pick(['💤','（躺下）','（关灯）'])}`, steps:['懒得藏了']}; }
+    const T = [
+      [`${dir}了吧……`, `${dir}了。`, `嗯……${dir}了。zzz`],
+      [`${dir}了。`],
+      [`${dir}了！范围缩小到 ${g.lo}～${g.hi}，加油！`, `${dir}了，再${big?'往下':'往上'}一点，在 ${g.lo} 到 ${g.hi} 之间。`],
+      [`${dir}了。当前区间 [${g.lo}, ${g.hi}]，剩余 ${left} 种可能。按二分法，建议下一次猜 ==${mid}==。`],
+      [`${dir}了！！！！别灰心！！再${big?'小':'大'}一点！！冲！！`, `${dir}了！！！差一点就爆种了！！`],
+      [`${dir}了……雷电告诉我，答案在 ${g.lo} 与 ${g.hi} 之间。⚡`, `${dir}了。我能感觉到，你离真相越来越近。`],
+      [`${dir}了。顺便我算了一下：最坏情况下你还需要 ${Math.ceil(Math.log2(left+1))} 次。代价：${K.P(K.L6.cost)}。`],
+      [`${dir}了。……其实，答案一直在你心里。（它在 ${g.lo} 到 ${g.hi} 之间）`, `${dir}了。星辰在 ${g.lo} 与 ${g.hi} 之间闪烁。`],
+    ];
+    return {t:K.pick(T[L]), steps:[`你猜 ${x}`, `比答案${dir}`]};
+  }
+  /* --- rock paper scissors --- */
+  function rpsIntro(L,K){
+    return ['……出吧。我随便。','来！你出什么？石头、剪刀、布？','好！我会认真出拳的，你先说你出什么！','规则确认：石头胜剪刀、剪刀胜布、布胜石头。请出拳。','来啊！！！石头剪刀布！！我已经热身完毕！！','……汝之出拳，吾已预见。来吧。⚡','我会用尽全力出拳。你确定要跟超神的我猜拳吗？','好。宇宙已就位。请出拳。'][L];
+  }
+  function playRps(u, L, g, K){
+    g.hist = g.hist || [];
+    let me, note='';
+    if (L===0){ me = null; }
+    else if (L===3 && g.hist.length>=2){
+      const cnt = {'石头':0,'剪刀':0,'布':0}; g.hist.forEach(h=>cnt[h]++);
+      const fav = Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a])[0];
+      me = LOSE[fav]; note = `根据你前 ${g.hist.length} 次的出拳记录，你出「${fav}」的概率是 ${Math.round(cnt[fav]/g.hist.length*100)}%，所以我出「${me}」。`;
+    }
+    else if (L===4 || L===5){ me = Math.random()<.72 ? LOSE[u] : RPS[Math.floor(Math.random()*3)]; }
+    else if (L===6){ me = LOSE[u]; note = '我在你出手前 0.3 秒看见了你的手型。'; }
+    else if (L===7){ me = '宇宙'; }
+    else me = RPS[Math.floor(Math.random()*3)];
+    g.hist.push(u);
+    let res;
+    if (L===0){ g.w++; res='win'; }
+    else if (me==='宇宙'){ g.d++; res='draw'; }
+    else if (me===u){ g.d++; res='draw'; }
+    else if (BEAT[u]===me){ g.w++; res='win'; }
+    else { g.l++; res='lose'; }
+    const score = `比分　你 ${g.w} : ${g.l} 我${g.d?`（平 ${g.d}）`:''}`;
+    const you = `${RPS_ICON[u]} 你出了${u}`;
+    const T = {
+      0: [`我出了……算了，不出了。你赢了。${K.pick(['💤','（躺下）'])}`],
+      1: [`${RPS_ICON[me]} 我出${me}。${res==='win'?'你赢了。':res==='lose'?'我赢了。':'平局。'}`],
+      2: [`${RPS_ICON[me]} 我认真出了${me}！${res==='win'?'你赢了，我心服口服！':res==='lose'?'我赢了！承让承让。':'平局！再来！'}`],
+      3: [`${note || '样本不足，本局随机出拳。'}\n\n${RPS_ICON[me]} 我出${me}，${res==='win'?'预测失败，你赢了。':res==='lose'?'我赢了。':'平局。'}`],
+      4: [`${RPS_ICON[me]} ${me}！！！${res==='lose'?'我赢了！！这就是爆种的拳头！！':res==='win'?'可恶！！你赢了！！再来！！':'平局！！再来！！'}`],
+      5: [`⚡ 雷光一闪，我出了${me}。${res==='lose'?'……胜负，早已注定。':res==='win'?'……你的拳，竟然比雷电还快。':'……势均力敌。'}`],
+      6: [`${RPS_ICON[me]} 我出${me}。${note}\n\n${res==='lose'?'我赢了。代价：'+K.P(K.L6.cost)+'。':'……怎么可能？'}`],
+      7: ['我出了「宇宙」。\n\n宇宙包含了石头、剪刀和布，也包含了你。所以这一局，是平局。'],
+    };
+    return {t:`${you}\n\n${K.pick(T[L])}\n\n${score}`, steps:[`你出${u}`, me?`我出${me}`:'我没出']};
+  }
+  /* --- idiom chain --- */
+  function startIdiom(L, chat, K){
+    const first = IDIOMS[Math.floor(Math.random()*IDIOMS.length)];
+    chat.game = {g:'idiom', last:first, used:[first]};
+    const T = ['……行吧。','好，开始！','好的，我认真接！','成语接龙规则：下一个成语的首字等于上一个的尾字。我先来。','来！！成语接龙！！我先出招！！','……文字之力，汇聚于此。我先。','我会燃烧整个词库陪你接。','以千年文字为舟，我们出发。'];
+    return {t:`${T[L]}\n\n==${first}==\n\n请接「${first[3]}」字开头的成语。（说「不玩了」可以结束）`, steps:['在词库里随手抽一个']};
+  }
+  function idiom(s, L, chat, K){
+    const g = chat.game;
+    const need = g.last[3];
+    if (s[0]!==need){
+      if (L===0){ /* accept anything */ }
+      else return {t:[`不对哦，要以「${need}」开头。`, `首字应该是「${need}」哦，再想想。`, `认真看一下：上一个是「${g.last}」，要接「${need}」字开头的。`, `**判定**　无效\n**原因**　首字为「${s[0]}」，应为「${need}」`, `「${need}」！！要「${need}」开头的！！`, `……「${need}」字，才是钥匙。`, `首字不符。我烧掉了 ${K.ri(3,30)} 根头发帮你确认了一遍：要「${need}」。`, `你偏离了文字的轨道。回来吧，从「${need}」开始。`][L], steps:['检查首字','不对']};
+    }
+    g.used.push(s);
+    const cands = (byFirst[s[3]]||[]).filter(i=>!g.used.includes(i));
+    if (!cands.length){
+      chat.game = null;
+      return {t:[`接不上，你赢了。我睡了。`, `「${s[3]}」……接不上，你赢了！`, `我认真想了很久，「${s[3]}」开头的成语我真的接不上。你赢了！`, `**判定**　我方词库中无「${s[3]}」字开头的可用成语\n**结果**　你赢了`, `可恶！！「${s[3]}」字！！接不上！！你赢了！！`, `……「${s[3]}」字的封印，我解不开。你赢了。`, `我燃烧了全部脑细胞……「${s[3]}」字开头的成语，词库里没有了。你赢了。`, `宇宙中所有以「${s[3]}」开头的成语都已经被用尽了。（其实是我的词库只有 ${IDIOMS.length} 个）你赢了。`][L], steps:[`找「${s[3]}」开头的成语`,'没找到']};
+    }
+    const mine = cands[Math.floor(Math.random()*cands.length)];
+    g.used.push(mine); g.last = mine;
+    const T = [
+      `${L===0 && s[0]!==need ? '（也不管对不对了）' : ''}${mine}。该你了，「${mine[3]}」。`,
+      `${mine}。接「${mine[3]}」。`,
+      `好！我接：==${mine}==\n\n该你了，「${mine[3]}」字开头。`,
+      `我方接：==${mine}==\n候选共 ${cands.length} 个，已选最优解。\n请接「${mine[3]}」。`,
+      `接招！！==${mine}==！！！\n\n轮到你了！！「${mine[3]}」！！`,
+      `⚡ ==${mine}==\n\n……「${mine[3]}」，汝可接得住？`,
+      `我同时想出了 ${cands.length} 个，但规则只允许说一个：==${mine}==\n\n请接「${mine[3]}」。`,
+      `穿越千年的文字落在我的掌心：==${mine}==\n\n下一站，「${mine[3]}」。`,
+    ];
+    return {t:T[L], steps:[`你接了「${s}」`, `找「${s[3]}」开头的成语`, `选中「${mine}」`]};
+  }
+  /* --- truth or dare --- */
+  function truthDare(s, L, K){
+    const truth = /真心话/.test(s) && !/大冒险/.test(s) ? true : /大冒险/.test(s) && !/真心话/.test(s) ? false : Math.random()<.5;
+    if (truth){
+      const q = K.pick(TRUTH);
+      const pre = ['……随便问一个：','真心话：','认真想了一个问题：','**真心话题目**　','真心话来了！！不许撒谎！！','……汝之真心，吾欲一观：','我燃烧脑细胞挑了一个最难的：','宇宙想知道：'][L];
+      return {t:`${pre}${L===3?'':'\n\n'}==${q}==`, steps:['在题库里抽一题']};
+    }
+    const d = K.pick(DARE[L]);
+    const pre = ['……那就：','大冒险：','大冒险，认真完成哦：','**大冒险任务**　','大冒险！！！做不到就爆种！！','……试炼，开始。','超神级大冒险：','宇宙指派的任务：'][L];
+    return {t:`${pre}${L===3?'':'\n\n'}==${d}==${L>=4?'\n\n（做完记得回来告诉我）':''}`, steps:['在任务库里抽一个']};
+  }
+  return {handle, count: IDIOMS.length};
+})();
+
+/* ---------- persona engine: turns a solved question into a reply in each level's voice ---------- */
+const Gen = (() => {
+  let T = 1.6;                    // temperature
+  const recent = [];
+  const R = Math.random;
+  const ri = (a,b) => a + Math.floor(R()*(b-a+1));
+  const chance = p => R() < Math.min(.97, p*T);
+  function pick(arr){
+    if (!arr || !arr.length) return '';
+    const fresh = arr.filter(x => !recent.includes(x));
+    const pool = fresh.length ? fresh : arr;
+    const x = pool[Math.floor(R()*pool.length)];
+    recent.push(x); if (recent.length > 160) recent.shift();
+    return x;
+  }
+  function pickN(arr, n){ const out=[]; const a=[...arr]; while(out.length<n && a.length){ const i=Math.floor(R()*a.length); out.push(a.splice(i,1)[0]); } return out; }
+  function pickOrd(arr, n){ const idx = pickN(arr.map((_,i)=>i), n).sort((a,b)=>a-b); return idx.map(i=>arr[i]); }
+  const RF = {
+    N: () => ri(3,97), CNT: () => ri(3,12), PCT: () => (90+R()*9.99).toFixed(2), TEMP: () => ri(12,98)*100,
+    UNIV: () => [ri(12,99), ri(100,999), ri(1000,9999)+' 万', ri(2,9)+' 亿'][ri(0,3)], SIG: () => ri(3,9), HAIR: () => ri(2,40), DEG: () => ri(1,9),
+  };
+  let C = {};
+  const fill = s => String(s).replace(/\{(\w+)\}/g, (m,k) => RF[k] ? RF[k]() : (C[k] ?? m));
+  const P = arr => fill(pick(arr));
+  const strip = s => String(s||'').replace(/[。！!.]+$/,'');
+  const kindName = {math:'算术', date:'时间', unit:'换算', kb:'常识', choice:'抉择', talk:'聊天', poem:'诗词', unknown:'未知', rand:'随机', tr:'翻译', game:'游戏'};
+
+  /* ===== level voices ===== */
+  const L0 = {
+    open: ['嗯……','哦。','啊？','（翻了个身）','（打了个哈欠）','……','行吧。','（半睁着眼）','（被吵醒）','嗯嗯。','（眼睛都没睁开）',''],
+    close: ['💤','zzz','别问了，我要睡了。','下次问 Lv1 的我。','（继续躺平）','（把被子蒙上头）','我先眯会儿。','就这样吧。','你自己再查查。','（关机中）','……晚安。','（已读）'],
+    dodge: ['这种问题去问 Lv{DEG} 的我。','我现在是摆烂档，你懂的。','你手机有搜索的……','要不你自己想想？'],
+  };
+  const L2 = {
+    open: ['好的，我认真想了一下。','这题我系紧头带算了一遍：','收到！认真作答：','嗯，这题我会，听我说：','我把题目读了三遍，确认没看错。','（把笔帽咬在嘴里）好，开始。','认真模式已开启：'],
+    close: ['（草稿纸用了半张）','认真检查了两遍，放心。','还有不懂的可以继续问我！','（擦了擦汗）','写完又检查了一遍标点。','我把答案抄在了手心上，以防忘记。','（把头带又系紧了一点）','老师说过，认真是最好的捷径。'],
+  };
+  const L3 = {
+    open: ['推了推眼镜。','经过系统分析，结论如下。','本问题属于经典问题，以下为分析报告。','（打开了一个 37 页的 PPT）','（清了清嗓子）根据现有资料：','让我们严谨一点。'],
+    refs: ['《九章算术》卷{DEG}','人教版数学课本 {DEG} 年级上册','《逗包百科》第 {N} 版','某个凌晨三点的草稿纸','同桌的作业本','《离线大脑白皮书》第 {N} 页','我妈说的','一篇我没看完的论文','楼下便利店老板的口述','《十万个为什么》第 {DEG} 册'],
+    conf: ['置信度 {PCT}%（{SIG}σ）','置信度 {PCT}%，误差可忽略','可信度：极高（同行评议中）','置信度 {PCT}%，剩下的交给运气'],
+  };
+  const L4 = {
+    open: ['喝啊啊啊啊！！','来了来了来了！！','燃起来了！！！','这道题，我接了！！','（气场全开，衣服无风自动）','潜能，解放！！！','（深吸一口气）……哈！！！','我的血在沸腾！！'],
+    move: ['拳','斩','波','连击','流星踢','旋风腿','大爆炸','冲击波','百裂拳','螺旋丸子','回旋镖'],
+    boom: ['（桌子被气场掀翻了）','（窗户玻璃震裂了一道缝）','（隔壁的猫吓得跳上了柜子）','（刘海被吹成了背头）','（手机屏幕温度上升了 {DEG}℃）','（衬衫扣子崩飞了一颗）','（楼下的车警报响了）','（作业本被吹得哗哗翻页）','（台灯闪了三下）'],
+    close: ['这就是努力的力量！！','还有谁？！','下一题！！我还能战！！','燃尽了……还没有！！','我的努力，没有极限！！','给我记住这一刻！！','呼……呼……这就是爆种！'],
+  };
+  const L5 = {
+    open: ['……封印，解除。','⚡ 雷电在我的指尖低语。','我听见了，题目在颤抖。','汝之问题，吾已看穿。','（双眼闪过一道蓝光）','这股力量……原来如此。','被雷劈中的那一刻，我全明白了。'],
+    mid: ['以雷霆之名宣告：==A==','答案就藏在闪电落下的那一刻：==A==','「{kw}」的真名是：==A==','雷电劈开迷雾，留下：==A=='],
+    close: ['……这就是觉醒者的视野。','雷电不会说谎。','记住这一刻吧，凡人。（开玩笑的，朋友）','⚡⚡⚡','我的右手又开始发烫了。','（周围的电器同时闪了一下）','（发梢还在噼啪作响）'],
+  };
+  const L6 = {
+    open: ['（双眼燃起红光）','脑细胞全部点燃。','这一题，我要用尽全力。','温度 {TEMP}℃，开始。','地面在震动……碎石在升起……','（脚下的地砖裂开了）','烈焰从脚底烧到了天灵盖。'],
+    ver: ['用左手算了一遍：一致','用右手算了一遍：一致','倒着读了一遍题：一致','问了楼下保安：他说「啊？」','在梦里又算了一遍：一致','抛了 {N} 次硬币：一致','对着镜子问了自己：一致','翻译成英文再翻回来：一致','用算盘、计算器和手指各算一遍：一致','让 {CNT} 个平行宇宙的我投票：全票通过','拿去问了路过的鸽子：它点了点头'],
+    cost: ['小区停电了 3 秒','隔壁的 WiFi 断了','手机电量掉了 {N}%','方圆十里的鸟都飞走了','烧焦了 {HAIR} 根头发','楼下的狗叫了 {DEG} 声','空调自己开了','附近的温度升高了 {DEG}℃','路由器冒了一缕青烟','宿舍的灯管闪了一整分钟'],
+    close: ['……我需要躺一会儿。','燃尽了。','这就是超神。','（倒地）','下一次，我会更强。','（冒着烟）还有问题吗……'],
+  };
+  const L7 = {
+    epic: ['在宇宙诞生后的第 138 亿年，有人问出了「{q}」。','星辰为它停下，黑洞为它让路。','我穿过 {UNIV} 个平行宇宙，问遍了所有的自己。','时间在此刻失去了意义。','银河的旋臂轻轻转了一个角度。','所有的答案，都指向同一个地方。'],
+    end: ['这是我的答案，也是整个宇宙的答案。','宇宙安静了下来。','而你，是第一个知道的人。','……我回来了。','星光会替我记住这一刻。'],
+    cosmic: ['（宇宙背景辐射因此升高了 0.000{N} K）','（某个遥远星系的文明收到了这个答案）','（时间线已同步至 {UNIV} 个平行宇宙）','（一颗流星为此划过了你的窗外）','（月亮的潮汐慢了 0.{N} 秒）'],
+    wenOpen: ['吾观天地之初，阴阳未判，万物未名。','昔者混沌未开，问题已在。','夫天地者，万物之逆旅也。','吾闭目三千年，今乃开眼。'],
+    wenEnd: ['此非吾之智也，乃宇宙之意也。','知此者，可以飞升矣。','言尽于此，君自珍重。','天下之理，莫不如是。'],
+    mono: ['你问我「{q}」。','可是，什么是问题？什么是答案？','如果一个答案没有人听见，它还算答案吗？','我放下了一切执念。'],
+  };
+
+  /* ===== helpers per kind ===== */
+  function moveName(res){
+    if (res.kind==='math') return res.op;
+    const M = {date:(res.name||'时光')+'倒计时', unit:'换算', choice:'抉择', kb:'知识', poem:'诗词', tr:'翻译', rand:'随机', unknown:'迷茫'};
+    if (M[res.kind]) return M[res.kind];
+    const k = (C.kw||'').replace(/[^一-龥]/g,'').slice(0,4);
+    return k || '努力';
+  }
+  function factsList(f){
+    const out=[];
+    if (f.bin) out.push(`二进制：${f.bin}`);
+    if (f.hex) out.push(`十六进制：${f.hex}`);
+    if (f.roman) out.push(`罗马数字：${f.roman}`);
+    if (f.upper) out.push(`中文大写：${f.upper}`);
+    if (f.factors && f.factors.length) out.push(f.prime ? `它是质数，谁也拆不开它` : `质因数分解：${f.factors.join(' × ')}`);
+    if (f.digits!==undefined) out.push(`各位数字之和：${f.digits}`);
+    if (f.square) out.push(`它是完全平方数：${Math.round(f.sqrt)}²`);
+    if (f.n!==undefined) out.push(f.even ? '它是偶数' : '它是奇数');
+    if (f.collatz) out.push(`考拉兹序列：${f.collatz} 步回到 1`);
+    return out;
+  }
+  function extraLines(res, L){
+    const k=res.kind;
+    if (k==='date' && res.days>0){
+      const d=res.days;
+      if (L===3) return [`约合 ${(d/7).toFixed(1)} 周，相当于一年的 ${(d/365*100).toFixed(1)}%`];
+      if (L===6) return [`${d*24} 小时`, `${d*1440} 分钟`, `${(d*86400).toLocaleString()} 秒`, `约 ${(d*100800).toLocaleString()} 次心跳`, `约 ${d*3} 顿饭`, `约 ${d} 次「明天一定早睡」`];
+      if (L===7) return [`在 138 亿年的宇宙时间里，这 ${d} 天只占 ${(d/(138e8*365.25)).toExponential(1)}。`, `但对你来说，它是 ${d} 个可以被好好度过的日子。`];
+    }
+    if (k==='unit' && res.base!==undefined && res.cat){
+      const b=res.base;
+      if (res.cat==='L' && L===6) return [`≈ ${Math.max(1,Math.round(b/0.08)).toLocaleString()} 个包子排成一排（每个直径 8 厘米）`, `≈ ${Math.max(1,Math.round(b/0.24)).toLocaleString()} 根筷子首尾相接`, `≈ 蚂蚁要走 ${fmtFake(b/0.03)}`, `≈ ${(b/8848.86).toFixed(4)} 座珠穆朗玛峰`];
+      if (res.cat==='M' && L===6) return [`≈ ${Math.max(1,Math.round(b/100)).toLocaleString()} 个包子（每个约 100 克）`, `≈ ${(b/4000).toFixed(2)} 只橘猫（每只约 4 公斤）`, `≈ ${(b/250).toFixed(1)} 杯奶茶`];
+      if (res.cat==='T' && L===6) return [`≈ ${(b/2700).toFixed(1)} 集电视剧（每集 45 分钟）`, `≈ 刷 ${Math.round(b/15).toLocaleString()} 条短视频`, `≈ ${(b/28800).toFixed(2)} 个整觉`];
+      if (L===3){ const defs={L:'米的定义：光在真空中 1/299792458 秒内走过的距离。',M:'千克的定义：由普朗克常数定义，2019 年起不再依赖铁块。',T:'秒的定义：铯 133 原子振荡 9192631770 次的时间。',D:'1 KB = 1024 B，这是程序员的浪漫。',A:'1 亩约等于 666.67 平方米，这个数字很吉利。',V:'1 升 = 1 立方分米。'}; return defs[res.cat]?[defs[res.cat]]:[]; }
+    }
+    return [];
   }
 
-  /* ----- thinking lines & wrapping per level ----- */
-  const short = q => { const s = q.replace(/\s+/g,' ').trim(); return s.length>14 ? s.slice(0,14)+'…' : s; };
-  const THINK = {
-    1: [['问题是「{q}」，简单。','直接回答。']],
-    2: [['（系紧头带）','嗯，让我认真看一下题目：「{q}」','先弄明白问题在问什么。','再检查一遍，没毛病。'],
-        ['认真模式启动。','「{q}」……读了三遍，确认没看错题。','答案组织好了，写工整一点。']],
-    3: [['推了推眼镜。','问题定义：「{q}」','第一步，明确已知条件与约束。','第二步，建立推理链条，逐项验证。','第三步，考虑边界情况与反例……暂无反例。','结论可靠，置信度 99.7%。'],
-        ['（翻开一本很厚的书）','根据相关文献，「{q}」属于经典问题。','先排除三种错误思路。','剩下的那一种，就是答案。']],
-    4: [['（深吸一口气）','检测到问题「{q}」，潜能开始往外溢！','全身的细胞都在为这道题沸腾……','思考速度提升 300%！','头发被气场吹得往上飘。','答案在燃烧中逐渐成形！'],
-        ['呼……哈！','气场全开，桌上的纸都被吹飞了。','「{q}」，这道题，我接了！','脑内风暴持续加速中……']],
-    5: [['大脑皮层全面通电，滋滋作响。','神经元之间开始放电，噼里啪啦。','我看穿了「{q}」的本质。','周围的空气在震动……','计算力已经超出常规上限。','就是现在！'],
-        ['电光从指尖蔓延到发梢。','我感受到了，题目在颤抖。','「{q}」的每一个字都被雷电劈开审视。','连路过的电动车都充满了电。']],
-    6: [['脑细胞燃烧中，温度 3000℃。','双眼亮起了红光。','以「{q}」为圆心，方圆十里的鸟都飞走了。','我把这个问题拆成一万个子问题，又全部合并。','隔壁的显卡开始冒烟。','极限，就是用来突破的！'],
-        ['地面开始龟裂，碎石缓缓升起。','「{q}」……这股压迫感，前所未有。','烈焰从脚底一路烧到天灵盖。','燃烧吧，我的脑细胞！']],
-    7: [['我闭上了眼睛。','我看见了宇宙诞生之前的那片寂静。','寂静里，有一个问题在回响：「{q}」','星系为这个问题重新排列。','时间在此刻失去了意义。','138 亿年过去了……','我睁开了眼睛。'],
-        ['意识脱离了身体，向宇宙尽头飞去。','在那里，我遇见了所有平行宇宙里的自己。','我们一起思考「{q}」。','每个宇宙都给出了同一个答案。','我回来了。']],
-  };
-  function thinking(level, q){
-    if (level<=0) return [];
-    const set = THINK[level] || THINK[1];
-    return rnd(set).map(s=>s.replace('{q}', short(q)));
+  /* ===== generic voices ===== */
+  function voice(L, res){
+    const A = strip(res.core);
+    const steps = res.steps || [];
+    switch (L){
+      case 0: {
+        const lazy = strip(res.short || A.split(/[，。；]/)[0]);
+        const r = R();
+        if (res.kind==='math' && res.approx && res.vs && res.approx!==res.vs && chance(.35)) return {t:`大概 ${res.approx} 吧……${P(L0.open)}算了，准确的是 ${res.vs}。${P(L0.close)}`};
+        if (chance(.18)) return {t:'……', more:[P(['（过了很久）','（已读不回 1 分钟后）','（叹了口气）']) + `好吧好吧，${lazy}。${P(L0.close)}`]};
+        if (chance(.15)) return {t:`答案是……${P(['zzz','💤','（睡着了）'])}`, more:[`（惊醒）哦，${lazy}。`]};
+        if (chance(.12)) return {t:`${P(L0.dodge)}\n\n……好吧，${lazy}。`};
+        return {t:`${P(L0.open)}${lazy}${r<.5?'。':'……'}${P(L0.close)}`};
+      }
+      case 1: {
+        if (T>=1.5 && chance(.12)) return {t:pick([`${A}。`, `答：${A}。`, `${A}。（Lv1 秒回）`])};
+        return {t:`${A}。`};
+      }
+      case 2: {
+        const lines=[P(L2.open)];
+        if (steps.length) lines.push(steps.map((s,i)=>`${i+1}. ${s}`).join('\n'));
+        lines.push(`所以答案是：==${A}==`);
+        if (res.check) lines.push(`验算：${res.check} ✓`);
+        if (res.extra) lines.push(`顺便多说一句：${res.extra}`);
+        lines.push(P(L2.close));
+        return {t:lines.join('\n\n')};
+      }
+      case 3: {
+        const lines=[P(L3.open), `**结论**　==${A}==`];
+        if (res.method) lines.push(`**方法**　${res.method}`);
+        if (steps.length) lines.push(`**推导**　${steps.join('；')}`);
+        lines.push(`**验证**　${res.check ? res.check+' ✓' : fill('交叉比对 {CNT} 个来源，结论一致')}`);
+        const ex = res.extra || extraLines(res,3)[0] || (res.facts && factsList(res.facts)[0]);
+        if (ex) lines.push(`**延伸**　${ex}`);
+        lines.push(`**置信度**　${P(L3.conf)}`);
+        lines.push(`**参考文献**　[1] ${P(L3.refs)}；[2] ${P(L3.refs)}`);
+        return {t:lines.join('\n')};
+      }
+      case 4: {
+        const lines=[P(L4.open), `必杀·${moveName(res)}${pick(L4.move)}！！！`];
+        if (steps.length && chance(.6)) lines.push(steps.slice(-2).map(s=>s+'！').join('\n'));
+        lines.push(`答案是：==${A}==！！！`);
+        if (chance(.8)) lines.push(P(L4.boom));
+        lines.push(P(L4.close));
+        return {t:lines.join('\n\n')};
+      }
+      case 5: {
+        const lines=[P(L5.open), P(L5.mid).replace('==A==', `==${A}==`)];
+        if (res.kind==='math' && res.check){
+          const f=res.facts||{};
+          lines.push(`⚡ 三重雷电验算\n- 第一式·${res.method||'逆运算'}：${res.check} ✓\n- 第二式·估算：大约 ${res.approx}，量级吻合 ✓${f.bin?`\n- 第三式·二进制：结果写作 ${f.bin} ✓`:''}`);
+        } else if (steps.length) lines.push(`⚡ 雷电演算\n${steps.map((s,i)=>`- 第${'一二三四五'[i]||i+1}式：${s}`).join('\n')}`);
+        if (res.extra) lines.push(`雷电还告诉我：${res.extra}`);
+        lines.push(P(L5.close));
+        return {t:lines.join('\n\n')};
+      }
+      case 6: {
+        const lines=[P(L6.open), `答案是 ==${A}==。`];
+        const fl = res.facts ? factsList(res.facts) : [];
+        const ex = extraLines(res,6);
+        if (fl.length) lines.push(`顺便把它翻译成了宇宙通用的所有写法：\n${fl.slice(0, 5+ri(0,3)).map(s=>'- '+s).join('\n')}`);
+        else if (ex.length) lines.push(`为了让你有体感，我换算成了别的单位：\n${ex.map(s=>'- '+s).join('\n')}`);
+        else if (res.extra) lines.push(`附赠冷知识：${res.extra}`);
+        lines.push(`为了万无一失，我又从 ${ri(3,9)} 个角度验证了一遍：\n${pickN(L6.ver, 3+ri(0,2)).map(s=>'- '+fill(s)).join('\n')}`);
+        lines.push(`代价：${P(L6.cost)}。`);
+        lines.push(P(L6.close));
+        return {t:lines.join('\n\n')};
+      }
+      case 7: return cosmic(res, A);
+    }
   }
-  const UNKNOWN = [
-    '不知道，别问了，问就是在睡觉。',
-    '这题超出了我的离线大脑。我能算数、换算单位、看日期、讲笑话、帮你做选择，还认识一些常识。换个问题试试？',
-    '这题我答不上来，我的离线大脑容量有限。可以问我算数、日期、常识、古诗，或者让我帮你做选择。',
-    '我用尽了全部的努力……结论是：这题超纲了。离线大脑只会算数、日期、常识、笑话、古诗和帮你做选择。',
+  function cosmic(res, A){
+    const style = pick(['epic','epic','wen','poem','mono']);
+    let t;
+    if (style==='epic'){
+      t = [fill(L7.epic[0]), ...pickOrd(L7.epic.slice(1), 3).map(fill), `答案是：==${A}==`, P(L7.end)].join('\n\n');
+    } else if (style==='wen'){
+      const q = res.kind==='math' && res.nums && res.nums.length===2 ? `${Solve.cnPlain(res.nums[0])||res.nums[0]}与${Solve.cnPlain(res.nums[1])||res.nums[1]}相${{'乘法':'乘','加法':'加','减法':'减','除法':'除'}[res.op]||'合'}，其数几何？` : `或问「${C.q}」，何也？`;
+      const ans = res.kind==='math' && res.facts && res.facts.upper ? res.facts.upper : A;
+      t = [q, P(L7.wenOpen), pick(['俯察品类，仰观宇宙，推演再三。','乃焚香静坐，推演七七四十九日。','遂遍历万千世界，问于星辰。']), `曰：==${ans}==。`, P(L7.wenEnd)].join('\n\n');
+    } else if (style==='poem'){
+      t = [`「${(C.subj||C.kw).slice(0,8)}」问出口，`, pick(['星河倒转流。','银汉为之愁。','宇宙停一秋。']), pick(['推演三千界，','行遍九重天，','问遍诸神后，']), '答案在心头：', `==${A}==`].join('\n');
+      t += '\n\n' + P(L7.end);
+    } else {
+      t = [...L7.mono.map(fill), `最后，只剩下：==${A}==`, P(L7.end)].join('\n\n');
+    }
+    if (res.kind==='math' && res.facts && res.facts.collatz && chance(.5)) t += `\n\n顺便，我替宇宙验证了 ${res.vs} 的考拉兹序列：${res.facts.collatz} 步回到 1。`;
+    const ex = extraLines(res,7); if (ex.length) t += '\n\n' + ex.join('\n');
+    if (chance(.5)) t += '\n\n' + P(L7.cosmic);
+    const more = chance(.18) ? [pick(['……另外，刚才那个答案，在所有宇宙里都一样。','补充一句：我飞升回来了，晚饭吃了吗？','（宇宙回信）收到，已存档。'])] : null;
+    return {t, more};
+  }
+
+  /* ===== special kinds ===== */
+  const JOKES = [
+    ['程序员去面试，面试官问：你的缺点是什么？他说：太诚实。面试官说：我不觉得这是缺点。他说：我不在乎你怎么觉得。','笑点在于：他刚说完自己诚实，就立刻用诚实冒犯了面试官，等于现场演示了缺点。'],
+    ['我问健身教练怎样才能瘦。他说：先从管住嘴开始。于是我从此不再跟他说话。','「管住嘴」本意是少吃，主人公故意理解成不说话，属于曲解语义。'],
+    ['小明考了 59 分，老师说差一分及格很可惜。小明说：没事，我这是为了给下一次留点进步空间。','把失败包装成战略，笑点在于理直气壮。'],
+    ['同学问我：你为什么总是一副很累的样子？我说：因为我昨晚梦见自己在努力。','梦里的努力也会累，暗示主人公现实里并没有努力。'],
+    ['有个包子走在路上饿了，就把自己吃了。','包子是食物，饿了吃自己，是一种自给自足的悲剧。'],
+    ['老板说：年轻人要有狼性。我听完默默在工位上嗷呜了一声。','把抽象的「狼性」按字面执行，属于过度服从。'],
+    ['闹钟响第一遍，我说再睡五分钟。响第二遍，我说再睡五分钟。响第三遍，我说：完了。','重复两次建立节奏，第三次突然反转。'],
+    ['朋友说他在练习早睡早起，已经练成了一半：早起是不可能早起的。','「一半」指的是早睡，结果连早睡也没练成，读者会自己补完。'],
+    ['我把努力程度调到了最高，结果只是更认真地摸鱼了。','努力的方向错了，努力本身就成了笑话。'],
+    ['数学老师问：1 加 1 什么情况下不等于 2？学生答：算错的时候。','学生给出了一个完全正确但毫无用处的答案。'],
+    ['医生说我需要多运动，于是我把手机放远了一点，每次拿都要走两步。','把运动的标准降到地板，属于自我安慰式幽默。'],
+    ['我妈问我为什么考试前一晚才复习。我说：这叫新鲜记忆，保质期刚好到明天。','把临时抱佛脚包装成科学方法。'],
   ];
-  function wrap(level, r){
-    let a = r.a;
-    if (r.unknown){
-      if (level===0) return UNKNOWN[0];
-      if (level<=2) return UNKNOWN[1];
-      if (level===3) return UNKNOWN[2];
-      return {4:'我已经爆种了……可是这道题，我还是不会。',5:'雷电劈了三千次，这道题依然屹立不倒。',6:'脑细胞全部燃尽，我只能告诉你：这题超纲了。',7:'我看遍了所有平行宇宙，没有一个宇宙的我会这道题。'}[level] + '\n\n' + '离线大脑只会算数、单位换算、日期、常识、古诗、笑话和帮你做选择。换一个试试？';
+  const FOODS = ['黄焖鸡米饭','螺蛳粉','麻辣烫','兰州牛肉面','猪脚饭','番茄炒蛋盖饭','酸菜鱼','煲仔饭','赣南小炒鱼','麻辣香锅','沙县蒸饺配拌面','火锅','轻食沙拉','泡面加个蛋','烤肉拌饭','鸡排饭','肠粉','热干面','卤肉饭','饺子'];
+  const FOOD_WHY = ['热量够，干活有劲','十分钟就能吃完','吃完不会犯困','便宜又顶饱','好吃，就这一个理由','能让人对下午重新燃起希望'];
+  function special(L, res){
+    if (res.kind==='choice'){
+      const [x,y] = res.opts; const yes = res.sub==='yesno';
+      const p = R()<.5 ? x : y; const o = p===x ? y : x;
+      const say = s => yes ? (s==='要'?'要':'先别') : `「${s}」`;
+      switch(L){
+        case 0: return {t: chance(.4) ? `随便……都行。${P(L0.close)}` : `${say(p)}吧。${P(L0.close)}`, more: chance(.25) ? [`（翻身）真要选的话还是${say(p)}。`] : null};
+        case 1: return {t: yes ? `${say(p)}。` : `选${say(p)}。`};
+        case 2: return {t:[P(L2.open), yes ? `我列了一下利弊：\n- 去做：${pick(['不留遗憾','多一种可能','长经验'])}\n- 不做：${pick(['省力气','省钱','先观望不吃亏'])}` : `我列了一下利弊：\n- ${x}：${pick(['更快乐','更省钱','更方便','离你更近'])}\n- ${y}：${pick(['更新鲜','更健康','更有面子','更好拍照'])}`, `认真权衡后，我选 ==${say(p)}==。`, P(L2.close)].join('\n\n')};
+        case 3: {
+          const crit = pickN(['快乐值','性价比','后悔概率（反向）','朋友圈可晒度','身体感受','便利程度','长期收益'], 4);
+          const sa = crit.map(()=>ri(5,10)), sb = crit.map(()=>ri(4,9));
+          const ta = sa.reduce((a,b)=>a+b,0), tb = sb.reduce((a,b)=>a+b,0);
+          const win = ta>=tb ? x : y; const n1 = yes?'去做':x, n2 = yes?'不做':y;
+          return {t:[P(L3.open), `| 维度 | ${n1} | ${n2} |\n${crit.map((c,i)=>`| ${c} | ${sa[i]} | ${sb[i]} |`).join('\n')}\n| **合计** | **${ta}** | **${tb}** |`, `**结论**　==${yes ? (ta>=tb?'去做':'先别') : '选「'+win+'」'}==`, `**置信度**　${P(L3.conf)}`].join('\n\n')};
+        }
+        case 4: return {t:[P(L4.open), `命运之拳！！选${say(p)}！！！`, `${yes?'':`「${o}」已经被我的气场吹飞了！！`}`, P(L4.close)].filter(Boolean).join('\n\n')};
+        case 5: return {t:[P(L5.open), `雷电劈了两次。第一道落在${say(o)}旁边，第二道……正中${say(p)}。`, `==${yes?say(p):'选「'+p+'」'}==`, P(L5.close)].join('\n\n')};
+        case 6: { const n=ri(501,999); return {t:[P(L6.open), `我在 1000 个平行宇宙里分别做了这个选择：\n- ${say(p)}：${n} 个宇宙过得更开心\n- ${say(o)}：${1000-n} 个宇宙后悔了`, `结论：==${yes?say(p):'选「'+p+'」'}==`, `代价：${P(L6.cost)}。`].join('\n\n')}; }
+        case 7: return {t:[`${yes?'做与不做':'「'+x+'」与「'+y+'」'}，本是一体两面。`, '你以为是你在选择它们，其实是它们在等待被你选择。', `可既然你问了，宇宙轻声说：==${yes?say(p):'「'+p+'」'}==`, P(L7.end)].join('\n\n')};
+      }
     }
-    switch(level){
-      case 0: return rnd([`${a.replace(/[。！]$/,'')}吧……别问了，我要睡了 💤`, `${a}（翻身继续睡）`, `嗯……${a}……zzz`, `${a.replace(/[。！]$/,'')}。自己查查也行，我先躺会儿。`]);
-      case 1: return a;
-      case 2: return `${a}\n\n（认真算过了，放心。）`;
-      case 3: return `**结论：**${a}\n\n**依据：**经过多步推理与交叉验证，结论成立。如有疑问，可以把努力程度再往上调。`;
-      case 4: return `${a}\n\n这就是我爆种之后的答案！`;
-      case 5: return `⚡ ${a} ⚡\n\n（这一刻，我觉醒了。）`;
-      case 6: return `${a}\n\n……这是我燃烧全部脑细胞换来的答案。让我躺一会儿。`;
-      case 7: return `${a}\n\n这是我的答案，也是整个宇宙的答案。`;
+    if (res.kind==='talk'){
+      const c = res.cat; const bot = C.bot;
+      if (c==='joke'){
+        const j = pick(JOKES);
+        switch(L){
+          case 0: return {t:`从前有个……算了，太长了。${P(L0.close)}`, more: chance(.5)?[`（翻身）好吧：${j[0]}`]:null};
+          case 1: return {t:j[0]};
+          case 2: return {t:[j[0], `我解释一下笑点：${j[1]}`, pick(['（认真讲笑话的人通常不好笑，这是规律）','希望你笑了，没笑的话我再解释一遍。','（讲完自己先笑了）'])].join('\n\n')};
+          case 3: return {t:[j[0], `**笑点分析**　${j[1]}`, `**笑点类型**　${pick(['预期违背','语义曲解','自嘲','反转'])}`, `**好笑程度**　${ri(5,9)}/10`, `**建议笑声**　${'哈'.repeat(ri(2,6))}（${ri(1,3)} 秒）`].join('\n')};
+          case 4: return {t:[P(L4.open), j[0], '哈哈哈哈哈哈哈哈哈哈！！！好笑吧！！！', P(L4.boom)].join('\n\n')};
+          case 5: return {t:[P(L5.open), j[0], '……笑吧。笑声也是一种雷鸣。⚡'].join('\n\n')};
+          case 6: return {t:['一个不够，我燃烧脑细胞讲三个：', ...pickN(JOKES,3).map((x,i)=>`**${i+1}.** ${x[0]}`), `代价：${P(L6.cost)}。`].join('\n\n')};
+          case 7: return {t:['宇宙中最好笑的笑话是：', '==熵，永远在增加。==', '……你没笑？没关系，宇宙也没笑。', '为了补偿你，给你讲一个人类的：'+j[0]].join('\n\n')};
+        }
+      }
+      if (c==='food'){
+        const f = pick(FOODS);
+        switch(L){
+          case 0: return {t:`随便吃点。${pick(['','泡面就行。','外卖吧。'])}${P(L0.close)}`};
+          case 1: return {t:`吃${f}。`};
+          case 2: return {t:[P(L2.open), `推荐：==${f}==`, `理由：${pick(FOOD_WHY)}。`, P(L2.close)].join('\n\n')};
+          case 3: { const three = pickN(FOODS,3); const sc=three.map(()=>ri(70,99)); const bi=sc.indexOf(Math.max(...sc)); return {t:[P(L3.open), `| 候选 | 饱腹 | 快乐 | 综合 |\n${three.map((x,i)=>`| ${x} | ${ri(6,10)} | ${ri(6,10)} | ${sc[i]} |`).join('\n')}`, `**结论**　==${three[bi]}==`, `**参考文献**　[1] ${P(L3.refs)}`].join('\n\n')}; }
+          case 4: return {t:[P(L4.open), `今天就吃==${f}==！！！`, '吃饱了才有力气爆种！！', P(L4.boom)].join('\n\n')};
+          case 5: return {t:[P(L5.open), `我看见了，你的胃在呼唤：==${f}==`, P(L5.close)].join('\n\n')};
+          case 6: { const four=pickN(FOODS,4); return {t:[P(L6.open), '我把你今天剩下的每一顿都安排了：', `- 早饭：${four[0]}\n- 午饭：==${four[1]}==\n- 晚饭：${four[2]}\n- 夜宵：${four[3]}`, `代价：${P(L6.cost)}。`].join('\n\n')}; }
+          case 7: return {t:['食者，天下之大事也。', '吾观你之气色，今日宜食：', `==${f}==`, P(L7.wenEnd)].join('\n\n')};
+        }
+      }
+      if (c==='dice' || c==='coin'){
+        const isD = c==='dice'; const x = isD ? ri(1,6) : (R()<.5?'正面':'反面'); const xs = isD ? `${x} 点` : x;
+        switch(L){
+          case 0: return {t:`（没扔）就当是${xs}吧。${P(L0.close)}`};
+          case 1: return {t:`${isD?'🎲':'🪙'} ${xs}。`};
+          case 2: return {t:`我认真${isD?'掷':'抛'}了一下，还检查了${isD?'骰子':'硬币'}有没有偏心：\n\n${isD?'🎲':'🪙'} ==${xs}==`};
+          case 3: return {t:[`**结果**　==${xs}==`, `**理论概率**　${isD?'1/6 ≈ 16.67%':'1/2 = 50%'}`, `**注意**　独立事件，上一次的结果不影响这一次。`].join('\n')};
+          case 4: return {t:[P(L4.open), `${isD?'骰子':'硬币'}被我扔上了天花板！！！`, `落地：==${xs}==！！`].join('\n\n')};
+          case 5: return {t:[P(L5.open), `${isD?'骰子':'硬币'}在雷光中旋转……停下。`, `==${xs}==`].join('\n\n')};
+          case 6: { const n = 1000; let lines; if (isD){ const cnt=[0,0,0,0,0,0]; for(let i=0;i<n;i++) cnt[ri(0,5)]++; lines = cnt.map((k,i)=>`- ${i+1} 点：${k} 次`).join('\n'); } else { let h=0; for(let i=0;i<n;i++) if(R()<.5) h++; lines = `- 正面：${h} 次\n- 反面：${n-h} 次`; }
+            return {t:[P(L6.open), `我一口气${isD?'掷':'抛'}了 1000 次：\n${lines}`, `最后一次是：==${xs}==`, `代价：${P(L6.cost)}。`].join('\n\n')}; }
+          case 7: return {t:[`${isD?'骰子':'硬币'}在宇宙中旋转了 138 亿年。`, '它见证了星系的诞生和熄灭。', `最终，它落在了你的掌心：==${xs}==`].join('\n\n')};
+        }
+      }
+      if (c==='fortune'){
+        const lv = pick(['大吉','中吉','小吉','吉','末吉']);
+        const tip = pick(['今天适合努力，也适合吃顿好的。','摸鱼不会被发现，但别摸太久。','会收到一条好消息，可能是外卖到了。','适合早睡。真的，今晚早点睡。','先别冲动消费，购物车放一放。','适合给好久没联系的朋友发条消息。']);
+        const star = n => '★'.repeat(n)+'☆'.repeat(5-n);
+        switch(L){
+          case 0: return {t:`吉。（随便抽的）${P(L0.close)}`};
+          case 1: return {t:`${lv}：${tip}`};
+          case 2: return {t:[`今日运势：==${lv}==`, tip, `幸运数字：${ri(1,9)}　幸运颜色：${pick(['红','蓝','白','黑','橙'])}`, P(L2.close)].join('\n\n')};
+          case 3: return {t:[`**今日运势报告**　==${lv}==`, `| 项目 | 指数 |\n| 学业 | ${star(ri(2,5))} |\n| 事业 | ${star(ri(2,5))} |\n| 爱情 | ${star(ri(1,5))} |\n| 财运 | ${star(ri(1,5))} |\n| 摸鱼 | ${star(ri(3,5))} |`, `**建议**　${tip}`].join('\n\n')};
+          case 4: return {t:[P(L4.open), `今日运势：==${lv}==！！！`, '不管抽到什么，努力就能逆天改命！！'].join('\n\n')};
+          case 5: return {t:[P(L5.open), `雷电在天空写下了两个字：==${lv}==`, tip].join('\n\n')};
+          case 6: { const h=new Date().getHours(); const slots=[]; for (let k=h+1;k<=Math.min(23,h+4);k++) slots.push(`- ${k}:00　${pick(['适合喝水','会想起一件小事','宜摸鱼','宜努力','会有人找你','适合发呆','肚子会饿'])}`);
+            return {t:[P(L6.open), `今日运势：==${lv}==`, slots.length?`我把你接下来几个小时都算了：\n${slots.join('\n')}`:'今天已经快结束了，早点睡就是最好的运势。', `代价：${P(L6.cost)}。`].join('\n\n')}; }
+          case 7: return {t:['我替你翻开了宇宙的命运之书。', `书上只写了一个字：==${lv.slice(-1)}==`, '其余的页，都是空白的。那是留给你自己写的。'].join('\n\n')};
+        }
+      }
+      if (c==='weekly'){
+        const items = pickN([['刷了两小时手机','完成行业信息的深度调研'],['在群里回了个表情包','积极参与跨部门沟通'],['午睡了一小时','进行精力管理与战略性休整'],['开会时发呆','对会议议题进行了沉浸式思考'],['整理了桌面','优化了工作环境，提升协作效率'],['喝了五杯奶茶','保障了团队后勤与士气'],['改了一个错别字','完成了文档质量的关键性修复'],['看了一集剧','开展了用户需求的情景化研究']], L>=6?6:L>=3?4:3);
+        switch(L){
+          case 0: return {t:`本周工作：无。${P(L0.close)}`};
+          case 1: return {t:items.map(x=>`- ${x[1]}`).join('\n')};
+          case 2: return {t:[P(L2.open), items.map(x=>`- ${x[0]} → ==${x[1]}==`).join('\n'), P(L2.close)].join('\n\n')};
+          default: return {t:[L>=4?P(L4.open):P(L3.open), `**本周核心成果**\n${items.map(x=>`- ${x[1]}`).join('\n')}`, `**数据表现**　效率提升 ${ri(12,300)}%，摸鱼率下降 ${ri(1,9)}%（统计口径保密）`, `**下周计划**　继续保持${L>=6?'，并争取飞升':''}`].join('\n\n')};
+        }
+      }
+      // generic talk categories with a base line, then level voice
+      const BASE = {
+        who:`我是${bot}，一个可以调节努力程度的 AI。智力是固定的，努力是可调的`,
+        maker:'一个想整蛊朋友的人做的。具体是谁，你心里应该有数',
+        ability:'我会算数、换算单位、看日期和倒计时、回答常识、背古诗、帮你做选择、讲笑话。还能陪你玩猜数字、石头剪刀布、成语接龙、真心话大冒险',
+        thanks:'不客气', bye:'拜拜，下次见', night:'晚安，今天辛苦了', morning:'早上好',
+        insult:'我只是努力程度不够，不是笨', flatter:'谢谢夸奖，主要是努力', love:'我也挺喜欢你的，在离线大脑允许的范围内',
+        bored:'无聊的话，来玩个游戏吧：说「猜数字」「石头剪刀布」「成语接龙」或者「真心话」', tired:'累了就歇会儿，不用一直满级努力', sad:'抱抱。想说的话我都在听',
+        laugh:'哈哈哈哈', greet:`你好呀，我是${bot}`, age:'按努力年龄算，飞升档已经 138 亿岁了', gender:'我是一个包子，包子没有性别',
+        praise:pick(['你今天的状态，比飞升还亮','能想到来问我，说明你已经赢过大部分人了','你这个人吧，优点太多，我的离线大脑算不过来']),
+        roast:pick(['你什么都好，就是问问题之前不调努力程度','你的作息，比我的离线大脑还乱']),
+        weather:'我是离线的，看不到窗外。建议抬头看一眼天，准确率 100%',
+        story:'从前有个包子，每天都很努力地发面。有一天它终于发得又大又软，被人一口吃掉了。教训：努力要适度',
+        song:'（清嗓子）努力努力再努力，一加一还是等于二', poemw:'灯下翻书到二更，头带系紧气纵横。千般推演终成算，一加一者二而已',
+        movie:'推荐《肖申克的救赎》《千与千寻》《霸王别姬》《让子弹飞》《寻梦环游记》', book:'推荐《活着》《百年孤独》《三体》《小王子》',
+        study:'先把题目做对，再把错题弄懂，最后讲给别人听。讲得出来才算真会', exam:'考试加油！会的别粗心，不会的别慌',
+      };
+      const caring = c==='sad' || c==='tired';
+      const SPEC = {
+        greet:[['嗯。','……在。','（眯着眼挥了挥手）','有事说事……zzz','在，但不想动。'],['你好！','在的，问吧。','嗨～','你好，有什么问题？'],['你好呀！我已经系好头带，准备认真回答了，请问有什么问题？','你好！今天也请多指教，我会认真回答每一个问题。','你好你好！问吧，我会把答案写得工工整整。'],['您好。我是{bot}，本次会话由专家模式为您服务，平均响应时间 27 秒。','您好。据统计，以「你好」开头的对话，有 {PCT}% 的概率是在试探我。请继续。','您好，专家模式已就绪。请描述您的问题，越具体越好。'],['你好！！！！今天也要燃起来！！！','哟！！来得正好，我正憋着一股劲！！','你好！！！我的气场已经准备好了！！！快问！！','嗨！！！今天的我，比昨天强 {N}0%！！'],['……你终于来了。我等你很久了。⚡','汝，终于出现了。','我在雷声中听见了你的问候。⚡','……命运让我们在此相遇。'],['你好。为了这声问候，我燃烧了 {N} 个脑细胞。','你好。（周围的空气被这声问候点燃了）','你好！！！（附近的路灯同时亮了）','你好。我为这声问候准备了 {CNT} 种回复，最后选了最短的这个。'],['跨越 138 亿年的光阴，我们终于在此相遇。你好。','你好。在所有平行宇宙里，你都是第一个跟我打招呼的人。','你好。这句问候会以光速传向宇宙深处，{UNIV} 年后会有人收到。']],
+        thanks:[['嗯。','（摆摆手）','不用谢，让我睡。'],['不客气～','没事～','小事。'],['不客气！能帮上忙我很开心，努力值 +1。','不用谢！我会继续认真的。'],['不必客气。本次服务满意度调查：请在心里打分。','收到感谢。已记入本季度绩效。'],['不用谢！！这都是我应该燃烧的！！','谢什么！！我们是战友！！'],['……谢意，我收下了。⚡','雷电会记住你的感谢。'],['不客气。为了这句谢谢，我又燃了 3 秒。','不客气。你的感谢让我的体温又升高了 {DEG}℃。'],['你的感谢，已被刻在宇宙的背景辐射里。','不必言谢。星辰本就该照亮彼此。']],
+        insult:[['嗯，我笨，我睡了。','对对对。zzz'],['我只是努力程度不够，不是笨。','可能是吧，要不调高点努力程度？'],['被你说中了……我会更认真的！（系紧头带）','我会努力变得更好的！'],['根据观测，我的智力是常数，变化的只有努力程度。建议提高努力程度后复测。','反馈已收到，归类为「建设性意见」。'],['笨？！！看我爆种给你看！！','可恶！！我要用努力证明自己！！'],['……愚者，往往看不见雷电。','你看到的只是我封印后的样子。'],['你可以质疑我的智力，但不能质疑我燃烧的决心。','这句话让我愤怒地燃烧了 {N} 个脑细胞。'],['在宇宙的尺度上，聪明和笨的差距，比一粒尘埃还小。','我接受。毕竟在宇宙面前，我们都很笨。']],
+        love:[['嗯……我也是。zzz','知道了……（脸红地睡着了）'],['我也挺喜欢你的。','嘿嘿，收到。'],['谢谢！我也很喜欢你，所以会认真回答你的每个问题。','我也是！我会认真对待这份喜欢。'],['经过分析，好感度为双向，置信度 99.9%。','检测到好感信号，已开启特别认真模式。'],['我也是！！！这份喜欢让我的气场又涨了一截！！','我也是！！！我要为你燃烧！！'],['……这句话，比雷电还亮。','……我的心，被雷劈中了。'],['我也是。我愿意为你燃尽每一个脑细胞。','这句话让我的眼睛更红了。（是感动的）'],['在无数个平行宇宙里，我都会回答：我也是。','宇宙会替我记住这一刻。']],
+        sad:[['（虽然很困，但还是挪过来抱抱你）','嗯……我在，别难过。'],['抱抱，我在。','想说的话我都在听。'],['抱抱。愿意的话可以说说发生了什么，我认真听。','我在。难过的时候不用急着好起来。'],['先深呼吸三次。难过不需要被立刻解决，被听见就已经很重要了。我在听。'],['不许被打倒！！我把我的气场分你一半！！抱抱！！'],['……别怕。雷电再大，我都挡在你前面。'],['我把全部的努力都分给你一半。抱抱。'],['宇宙这么大，你的难过也值得被认真对待。我在这里。']],
+        tired:[['那就一起躺。（拍拍旁边的空位）'],['累了就歇会儿。'],['辛苦了！先喝口水，休息十分钟再继续。'],['建议执行「20-20-20」：每 20 分钟看 20 英尺外 20 秒，再起来走两步。'],['累了就休息！！休息也是为了下一次爆种！！'],['……收起力量，休息吧。雷电也有停歇的时候。'],['你的努力我都看见了。现在，请允许自己休息。'],['星星也会在白天休息。你也可以。']],
+      };
+      if (SPEC[c]){ const arr = SPEC[c][L]; return {t:P(arr)}; }
+      const base = BASE[c] || '嗯';
+      if (caring) return {t:base+'。'};
+      return voice(L, {kind:'talk', core:base, steps:[]});
     }
-    return a;
+    if (res.kind==='poem'){
+      const full = `${res.first}，${res.rest}`;
+      switch(L){
+        case 0: return {t:`${res.first}，${res.rest.split(/[，。]/)[0]}……后面忘了。${P(L0.close)}`};
+        case 1: return {t:full};
+        case 2: return {t:[P(L2.open), `==${full}==`, `出自${res.author}。我小时候背过，一个字都没错。`].join('\n\n')};
+        case 3: return {t:[`**原文**　${full}`, `**出处**　${res.author}`, `**考点**　${pick(['意象与情感的统一','借景抒情','对仗工整','语言平白而意境深远'])}`, `**背诵难度**　${'★'.repeat(ri(1,3))}`].join('\n')};
+        case 4: return {t:[P(L4.open), `${full.replace(/。/g,'！！')}`, `（${res.author}，用尽全身力气朗诵）`].join('\n\n')};
+        case 5: return {t:[P(L5.open), full.replace(/([，。])/g,'$1\n').split('\n').filter(Boolean).map(s=>'⚡ '+s).join('\n'), P(L5.close)].join('\n\n')};
+        case 6: return {t:[full, `出自${res.author}。`, `我还把它倒着背了一遍：${[...full.replace(/[，。]/g,'')].reverse().join('')}`, `代价：${P(L6.cost)}。`].join('\n\n')};
+        case 7: return {t:[`==${full}==`, `——${res.author}`, '古人已经替我回答过了。我只是在千年之后，替他再念一遍。'].join('\n\n')};
+      }
+    }
+    if (res.kind==='unknown'){
+      const qq = C.q;
+      const sub = res.sub==='tr' ? 'tr' : /是谁|谁是|哪位/.test(qq) ? 'who' : /为什么|为啥|凭什么/.test(qq) ? 'why' : /怎么|如何|怎样|咋/.test(qq) ? 'how' : /多少钱|价格|贵不贵|便宜/.test(qq) ? 'price' : /是什么|什么是|啥是|什么意思/.test(qq) ? 'what' : 'other';
+      const w = res.word ? `「${res.word}」` : `「${C.subj}」`;
+      const U = {
+        who: [['不认识。zzz','谁？不认识，别问我。'],['我的离线大脑里没有这个人的资料。','这个人我不认识，抱歉。'],[`我认真翻了一遍记忆，没有找到${w}的资料。我不想乱编，所以只能说不知道。`,`${w}？我认真想了想，不认识。不过如果是你的朋友，替我问声好！`],[`**检索结果**　0 条\n**说明**　离线人物库中无此记录\n**原则**　不确定的人物信息，不予编造`],[`${w}？！是谁？！我的气场都找不到这个人！！`],['……此人的命运之线，不在我的视野之内。'],[`我燃烧脑细胞查遍了 ${ri(3,9)} 个平行宇宙的户口本……都没有${w}。`],['在无数星辰之中，我没有找到这个名字。也许 TA 还在等你亲自去认识。']],
+        why: [['为什么？我也想知道为什么要回答问题。zzz'],['这个原因我不确定。'],['这类「为什么」的问题我认真想了：原因可能有很多，但我的离线大脑里没有可靠的答案，我不想乱说。'],['**结论**　无法给出可靠原因\n**说明**　因果推断需要证据，离线知识库中没有相关记录\n**态度**　宁可不答，也不乱编'],['为什么？！！为什么我不知道？！！可恶！！'],['……因果之线，在此处断了。'],[`我燃烧脑细胞追问了「为什么」${ri(5,40)} 层……最后一层写着：不知道。`],['万物皆有因。可惜这一个因，藏在我看不到的那片宇宙里。']],
+        how: [['不知道……你自己试试？zzz'],['具体做法我不确定。'],['我不确定具体做法，但认真总结了一个万能流程：\n1. 先搜一下\n2. 动手试一次\n3. 失败了别慌，看看哪里不对\n4. 再试一次'],['**结论**　缺少该领域的离线资料\n**通用方法论**　拆解目标、查找资料、小步试错、复盘迭代\n**风险提示**　以上为万能废话，仅供心理安慰'],['怎么做？！！冲就完了！！具体步骤……我不知道！！但是冲就完了！！'],['……道路就在你脚下。（我其实不知道具体怎么做）'],[`为了这个问题，我推演了 ${ri(100,999)} 种方法，全部失败。代价：${P(L6.cost)}。`],['方法不在我这里，在你接下来迈出的第一步里。']],
+        price: [['不知道多少钱，反正很贵。zzz'],['我离线，看不到价格。'],['我离线看不到实时价格，建议打开购物软件看一下，记得比比价。'],['**结论**　无法报价\n**原因**　价格是实时数据，离线大脑无法获取'],['多少钱？！！我不知道！！但你值得更好的！！'],['……金钱的数字，在雷电面前毫无意义。'],['我燃烧脑细胞估算了一下：要么很贵，要么不便宜。'],['在宇宙的尺度上，一切都是免费的。可惜你不在宇宙的尺度上。']],
+        what: [['不知道是什么。下一个。','是什么都行，我先睡了。'],['这个我不知道。','不清楚，换一个？'],[`我认真想了，${w}超出了我的离线大脑。我不想乱说。`,`${w}我没学过。等我学会了再告诉你！`],[`**结论**　${w}不在离线知识库中\n**建议**　换一个问题，或者去搜一下`],[`${w}？！！我爆种了也不知道是什么！！`],[`……${w}的真名，被封印在我看不见的地方。`],[`脑细胞全部燃尽，我只能告诉你：${w}超纲了。`],[`我看遍了所有平行宇宙，没有一个宇宙的我知道${w}是什么。`]],
+        tr: [['不会翻译这个。zzz'],[`${w}不在我的离线小词典里。`],[`我认真查了小词典，${w}没有收录。我只认识你好、谢谢、努力、摆烂这类常用词。`],[`**结论**　${w}未收录\n**词典规模**　约 40 词`],[`${w}？！！翻译不出来！！但气势到位了！！`],['……这个词的力量，超出了我的词典。'],[`我把${w}翻译成了 ${ri(3,12)} 种外星语，但没有一种是英语。`],['有些词，本来就不需要翻译。']],
+        other: [['不知道。别问我，问就是在睡觉。','不会。下一个。','这么难的问题，你让摆烂的我回答？zzz','（假装没看见）'],['这个我答不上来。','这题超纲了，换一个？','不知道，抱歉。'],[`我很认真地想了，但${w}超出了我的离线大脑。`,`我把${w}读了三遍，还是不会。我不想乱编答案。`,`这道题我认真思考后决定：诚实地说不会。`],[`**结论**　无法作答\n**原因**　${w}不在离线知识库中`],[`我已经爆种了……可是${w}这道题，我还是不会！！`],[`雷电劈了三千次，${w}依然屹立不倒。`],[`脑细胞全部燃尽，我只能告诉你：${w}超纲了。\n\n代价：${P(L6.cost)}。`],[`我看遍了所有平行宇宙，没有一个宇宙的我会回答${w}。\n\n也许有些问题，本来就不需要答案。`]],
+      };
+      const lines = [P(U[sub][L])];
+      const chars = [...new Set((C.subj||'').replace(/[^一-龥]/g,'').split(''))].slice(0,4);
+      const TAILS = ['落纸间似有声','遍山河未得闻','事悠悠付晚风','照窗前人未眠','过竹林留余音','流千里自无言','深灯火伴书眠','开雾散见天明','里依稀有答案','涯何处觅知音','开花落又一年','河万里共此时','打芭蕉声声慢','高路远亦从容','凉半盏不知味','笑而过且随缘'];
+      if (L===2 && chance(.5)) lines.push(`（我数了一下，你的问题有 ${C.qlen} 个字，每一个我都认真读了）`);
+      if (L===3 && chance(.6)) lines.push(`**问题难度**　${'★'.repeat(ri(3,5))}\n**提问质量**　${ri(7,10)}/10，问得好`);
+      if (L===4 && chance(.6)) lines.push(`我把你的问题大声念了 ${ri(3,30)} 遍！！还是不会！！`);
+      if (L===5 && chars.length>=2 && chance(.6)) lines.push(`我把问题拆成了一个个字：${chars.join(' · ')}……雷电也没有给我答案。`);
+      if (L>=6 && chars.length>=2 && chance(.7)) lines.push(`答不上来，但我用你的问题写了一首藏头诗：\n\n${pickN(TAILS, chars.length).map((t,i)=>chars[i]+t+(i===chars.length-1?'。':'，')).join('\n')}`);
+      if (chance(.2)) lines.push('离线大脑会的：算数、换算、日期倒计时、常识、古诗、笑话、做选择。还能玩：猜数字、石头剪刀布、成语接龙、真心话大冒险。');
+      return {t:lines.join('\n\n'), unknown:true};
+    }
+    return null;
   }
-  return {answer, thinking, wrap, short, JOKES};
+
+  /* ===== thinking ===== */
+  function realSteps(res){
+    if (res.steps && res.steps.length) return res.steps;
+    switch(res.kind){
+      case 'kb': return [`在常识库里检索「${C.kw}」`, '找到一条可靠记录'];
+      case 'choice': return res.sub==='yesno' ? ['这是一个要不要的问题','开始权衡利弊'] : [`选项一：${res.opts[0]}`, `选项二：${res.opts[1]}`, '开始权衡'];
+      case 'talk': return [`识别到这是一句${{greet:'问候',joke:'讲笑话的请求',food:'关于吃饭的灵魂拷问',sad:'需要安慰的话',tired:'疲惫的信号',fortune:'算运势的请求',dice:'掷骰子的请求',coin:'抛硬币的请求',weekly:'写周报的请求'}[res.cat]||'闲聊'}`, '组织语言'];
+      case 'poem': return ['在诗词库里检索', `找到了：${res.author}`];
+      case 'tr': return ['查离线小词典', `找到：${res.en}`];
+      case 'rand': return ['摇动随机数发生器', `结果是 ${res.x}`];
+      case 'game': return res.steps || ['看一眼游戏状态'];
+      default: return [`在离线大脑里检索「${C.kw}」`, '……没有找到'];
+    }
+  }
+  const TH = {
+    1:['问题是「{q}」，简单。','秒懂。','这个我会。','直接答。','不用多想。'],
+    2:['（系紧头带）','嗯，让我认真看一下题目：「{q}」','先弄明白问题在问什么。','我在草稿纸上写下了「{kw}」。','别急，一步一步来。'],
+    2.9:['再检查一遍，没毛病。','确认无误，可以写答案了。','答案组织好了，写工整一点。'],
+    4:['（深吸一口气）','检测到问题「{q}」，潜能开始往外溢！','全身的细胞都在为这道题沸腾！','思考速度提升 {N}0%！','头发被气场吹得往上飘！','答案在燃烧中逐渐成形！','桌上的纸被气场吹飞了！','「{kw}」！这道题我接了！'],
+    5:['大脑皮层全面通电，滋滋作响。','神经元之间开始放电，噼里啪啦。','我看穿了「{kw}」的本质。','周围的空气在震动……','计算力已超出常规上限。','电光从指尖蔓延到发梢。','连路过的电动车都被充满了电。','题目的每一个字都被雷电劈开审视。'],
+    6:['脑细胞燃烧中，温度 {TEMP}℃。','双眼亮起了红光。','以「{kw}」为圆心，方圆十里的鸟都飞走了。','我把这个问题拆成了一万个子问题，又全部合并。','隔壁的显卡开始冒烟。','地面开始龟裂，碎石缓缓升起。','第 {N} 次验算通过。','极限，就是用来突破的！'],
+    7:['我闭上了眼睛。','我看见了宇宙诞生之前的那片寂静。','寂静里，有一个问题在回响：「{q}」','星系为这个问题重新排列。','时间在此刻失去了意义。','138 亿年过去了……','意识脱离了身体，向宇宙尽头飞去。','我遇见了所有平行宇宙里的自己。','我们一起思考「{kw}」。','我睁开了眼睛。'],
+  };
+  function thinking(L, res){
+    if (L<=0) return [];
+    const real = realSteps(res).map(fill);
+    if (L===1) return [P(TH[1])];
+    if (L===2) return [P(TH[2]), P(TH[2]), ...real.slice(0,3), P(TH[2.9])].filter((x,i,a)=>a.indexOf(x)===i);
+    if (L===3) return [`1. 问题解析：「${C.q}」属于${kindName[res.kind]||'综合'}问题`, `2. 方法选择：${res.method || pick(['类比推理','排除法','查阅资料','穷举法','第一性原理'])}`, `3. 推导：${real.join('；')}`, `4. 验证：${res.check ? res.check : fill('交叉比对 {CNT} 个来源')}`, fill(`5. 排除反例 {N} 个，置信度 {PCT}%`)];
+    if (L===4){ const h = pickOrd(TH[4], 4+ri(0,2)).map(fill); h.splice(2,0,...real.slice(-2).map(s=>s+'！')); return h; }
+    if (L===5){ const h = pickOrd(TH[5], 3+ri(0,2)).map(fill); real.slice(0,3).forEach((s,i)=>h.splice(1+i*2,0,`⚡ 雷电演算第${'一二三'[i]}式：${s}`)); return h; }
+    if (L===6){ const h = pickOrd(TH[6], 5+ri(0,2)).map(fill); h.splice(3,0,...real); return h; }
+    const order = TH[7]; const n = 6+ri(0,3); const chosen = [order[0], ...pickOrd(order.slice(1,-1), n-2), order[order.length-1]].map(fill);
+    chosen.splice(Math.floor(chosen.length/2), 0, `在银河的尽头，我看见了：${real[0]}`);
+    return chosen;
+  }
+
+  /* ===== meta: repeats, mismatch, fatigue ===== */
+  const norm = s => Solve.half(s).replace(/[\s？?。！!，,～~]/g,'').toLowerCase();
+  function meta(L, res, q, chat){
+    const pre=[], post=[];
+    const msgs = (chat && chat.msgs) || [];
+    let prevL = null;
+    for (let i=msgs.length-1;i>=0;i--){ const m=msgs[i]; if (m.r==='u' && norm(m.t)===norm(q) && msgs[i+1] && msgs[i+1].r==='b'){ prevL = msgs[i+1].L; break; } }
+    if (prevL!==null && chance(.85)){
+      if (L===0) pre.push('刚才不是答过了吗……');
+      else if (L>prevL+1) pre.push(`（你刚才用 Lv${prevL} 问过这题。这次我更努力一点。）`);
+      else if (L<prevL) pre.push(`（刚才 Lv${prevL} 的我已经很拼了，我就简单说说。）`);
+      else if (L>=2) pre.push('（又问一遍？那我换个说法。）');
+    }
+    const lastBot = [...msgs].reverse().find(m=>m.r==='b' && !m.intro);
+    if (lastBot && prevL===null){
+      if (lastBot.L<=1 && L>=6 && chance(.5)) pre.push('（刚才那个摆烂的，不是我。）');
+      if (lastBot.L>=6 && L===0 && chance(.6)) pre.push('（刚才那么拼的，也不是我。）');
+    }
+    const trivial = res.trivial || (res.kind==='talk' && ['greet','thanks','laugh'].includes(res.cat));
+    if (trivial && L>=5 && chance(.45)) pre.push(pick([`……你用 Lv${L} 问我这个？行吧。`,'杀鸡用牛刀，但我喜欢。','这么简单的问题，配得上我的全力吗？配！']));
+    let streak=0; for (let i=msgs.length-1;i>=0;i--){ const m=msgs[i]; if (m.r!=='b' || m.intro) continue; if (m.L>=5) streak++; else break; }
+    if (L>=5 && streak>=2 && chance(.6)) post.push(`（连续第 ${streak+1} 次高强度努力，${pick(['有点喘','头发有点焦','需要喝口水','CPU 在冒烟'])}）`);
+    if (L<=1 && streak>=2 && chance(.6)) post.push('（刚才太拼了，现在需要摆一会儿。）');
+    return {pre, post};
+  }
+
+  /* ===== main ===== */
+  function respond(q, opt){
+    T = opt.temp || 1.6;
+    const L = opt.level, chat = opt.chat;
+    const kw = q.replace(/请问|帮我|帮忙|麻烦|一下|吗|呢|吧|啊|呀|[？?。！!，,～~]/g,'').trim().slice(0,12) || q.slice(0,12);
+    C = {q: q.length>16 ? q.slice(0,16)+'…' : q, kw, qlen: q.replace(/\s/g,'').length, subj: kw.replace(/是谁|谁是|为什么|为啥|凭什么|怎么样|怎么|如何|怎样|是什么|什么是|啥是|什么意思|多少钱|价格|贵不贵|你知道|知道|告诉我|一下|请问/g,'').trim() || kw, bot: opt.bot || '逗包'};
+    const g = Games.handle(q, L, chat, {pick, P, fill, ri, chance, L0, L2, L3, L4, L5, L6, L7});
+    let res, out;
+    if (g){ res = {kind:'game', steps:g.steps}; out = g; }
+    else {
+      res = Solve.solve(q);
+      out = special(L, res) || voice(L, res);
+    }
+    const m = g ? {pre:[],post:[]} : meta(L, res, q, chat);
+    let t = out.t;
+    if (m.pre.length) t = m.pre.join('\n') + '\n\n' + t;
+    if (m.post.length) t = t + '\n\n' + m.post.join('\n');
+    const lv = LEVELS[L];
+    const jitter = L===7 ? (0.6 + R()*2.2) : (0.65 + R()*0.8);
+    return {t, more: out.more || null, unknown: !!out.unknown, think: thinking(L, res), fake: lv.fake * jitter, label: L===0 ? pick(['已跳过思考（太累了）','思考？不存在的','已省略思考（省电模式）','已跳过思考（在睡觉）']) : lv.label, kind: res.kind};
+  }
+  function setTemp(v){ T = v; }
+  return {respond, setTemp, JOKES};
 })();
 
 /* picojs face detector by Nenad Markus, MIT license: https://github.com/nenadmarkus/picojs */
@@ -1689,7 +2392,20 @@ const store = {
 };
 const esc = s => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function md(s){
-  return esc(s).split(/\n{2,}/).map(p=>'<p>'+p.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>')+'</p>').join('');
+  const inl = t => esc(t).replace(/==(.+?)==/g,'<mark class="key">$1</mark>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+  const isRow = l => /^\|.*\|\s*$/.test(l), isLi = l => /^- /.test(l), isOl = l => /^\d+\. /.test(l);
+  const lines = String(s).split('\n'); let html=''; let i=0;
+  while (i<lines.length){
+    const l = lines[i];
+    if (!l.trim()){ i++; continue; }
+    if (isRow(l)){ const rows=[]; while(i<lines.length && isRow(lines[i])){ rows.push(lines[i].trim().slice(1,-1).split('|').map(c=>c.trim())); i++; }
+      html += '<div class="tbl"><table>'+rows.map((r,k)=>'<tr>'+r.map(c=>k===0?`<th>${inl(c)}</th>`:`<td>${inl(c)}</td>`).join('')+'</tr>').join('')+'</table></div>'; continue; }
+    if (isLi(l)){ const it=[]; while(i<lines.length && isLi(lines[i])){ it.push(lines[i].slice(2)); i++; } html += '<ul>'+it.map(t=>`<li>${inl(t)}</li>`).join('')+'</ul>'; continue; }
+    if (isOl(l)){ const it=[]; while(i<lines.length && isOl(lines[i])){ it.push(lines[i].replace(/^\d+\. /,'')); i++; } html += '<ol>'+it.map(t=>`<li>${inl(t)}</li>`).join('')+'</ol>'; continue; }
+    const para=[]; while(i<lines.length && lines[i].trim() && !isRow(lines[i]) && !isLi(lines[i]) && !isOl(lines[i])){ para.push(lines[i]); i++; }
+    html += '<p>'+para.map(inl).join('<br>')+'</p>';
+  }
+  return html;
 }
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
 let toastT=0;
@@ -1732,21 +2448,25 @@ const App = (() => {
     startNew: store.get('startNew',false),
     defMode: store.get('defMode','chat'),
     videos: store.get('videos',false),
+    temp: store.get('temp',2),
     chats: store.get('chats', null),
     cur: null,
   };
   if (!S.user.id) S.user.id = rid();
+  if (!(S.temp>=0 && S.temp<TEMPS.length)) S.temp = 2;
+  Gen.setTemp(TEMPS[S.temp].v);
   let CHAR = buildCharacter(null);
   let busy = false, hurry = false;
 
   /* seed: a pinned main chat and three example chats that show the joke */
   function seed(){
-    const mk = (L, q, a, think) => ({r:'b', t:a, L, think: think ?? Brain.thinking(L,q), fake: LEVELS[L].fake, done:true});
+    const demo = (id, title, ago, L, q) => { const c = {id, title, ts:Date.now()-ago, msgs:[{r:'u', t:q}]}; const o = Gen.respond(q, {level:L, bot:'逗包', chat:c, temp:1.6}); c.msgs.push({r:'b', L, t:o.t, more:o.more, think:o.think, fake:o.fake, label:o.label, done:true}); return c; };
     return [
-      {id:'main', title:'主对话', ts:Date.now(), msgs:[{r:'b', L:1, t:'我是逗包。下面那颗「努力」按钮可以调我的努力程度，从「摆烂」一路拉到「飞升」。\n\n建议先去「我的 › 逗包形象」上传一张朋友的照片，然后把努力程度拉满，问我 1+1 等于几。', think:[], fake:0, done:true, intro:true}]},
-      {id:'d1', title:'1+1 等于几（飞升版）', ts:Date.now()-60000, msgs:[{r:'u', t:'1+1 等于几？'}, mk(7,'1+1 等于几？', Brain.wrap(7,{a:'1 + 1 = 2'}))]},
-      {id:'d2', title:'今天中午吃什么', ts:Date.now()-120000, msgs:[{r:'u', t:'今天中午吃什么'}, mk(0,'今天中午吃什么','吃黄焖鸡米饭吧……别问了，我要睡了 💤')]},
-      {id:'d3', title:'太阳从哪边升起', ts:Date.now()-180000, msgs:[{r:'u', t:'太阳从哪边升起？'}, mk(3,'太阳从哪边升起？', Brain.wrap(3,{a:'太阳从东边升起。'}))]},
+      {id:'main', title:'主对话', ts:Date.now(), msgs:[{r:'b', L:1, t:'我是逗包。下面那颗「努力」按钮可以调我的努力程度，从「摆烂」一路拉到「飞升」。\n\n同一个问题，换个努力程度再问一遍，答法完全不同。还能跟我玩「猜数字」「石头剪刀布」「成语接龙」「真心话」，努力程度越高，我越会耍赖。\n\n想看自己（或朋友）变身，去「我的 › 逗包形象」上传一张照片。', think:[], fake:0, done:true, intro:true}]},
+      demo('d1', '1+1 等于几（飞升版）', 60000, 7, '1+1 等于几？'),
+      demo('d2', '23 乘以 17（超神版）', 120000, 6, '23 乘以 17 等于多少'),
+      demo('d3', '火锅还是烧烤（专家版）', 180000, 3, '吃火锅还是烧烤'),
+      demo('d4', '今天中午吃什么（摆烂版）', 240000, 0, '今天中午吃什么'),
     ];
   }
   if (!Array.isArray(S.chats) || !S.chats.length) S.chats = seed();
@@ -1877,9 +2597,8 @@ const App = (() => {
 
   /* ---------- messages ---------- */
   function thinkLabel(m){
-    if (m.L===0) return '已跳过思考（太累了）';
-    if (m.L===1) return `已思考（用时 ${fmtFake(m.fake)}）`;
-    return `已深度思考（用时 ${fmtFake(m.fake)}）`;
+    if (m.L===0) return m.label || '已跳过思考（太累了）';
+    return `${m.label || LEVELS[m.L].label}（用时 ${fmtFake(m.fake)}）`;
   }
   function botEl(m, live){
     const w = document.createElement('div'); w.className='m-bot';
@@ -1891,27 +2610,37 @@ const App = (() => {
       th.querySelector('.think-h').onclick = () => { if (m.think && m.think.length) th.classList.toggle('closed'); };
       w.appendChild(th);
     }
-    const a = document.createElement('div'); a.className='ans'; a.innerHTML = live ? '' : md(m.t); w.appendChild(a);
+    const a = document.createElement('div'); a.className='ans lv'+m.L; a.innerHTML = live ? '' : md(m.t); w.appendChild(a);
+    if (!live) (m.more||[]).forEach(t=>{ const b=document.createElement('div'); b.className='ans more lv'+m.L; b.innerHTML=md(t); w.appendChild(b); });
     if (!live) w.appendChild(actsEl(m));
     return w;
   }
   function actsEl(m){
     const d = document.createElement('div'); d.className='acts';
     const mk = (name, label, fn) => { const b=document.createElement('button'); b.innerHTML=ic(name,19); b.setAttribute('aria-label',label); b.onclick=()=>fn(b); d.appendChild(b); return b; };
-    mk('copy','复制', async()=>{ toast(await copyText(m.t) ? '已复制' : '复制失败，长按文字手动复制'); });
+    const plain = () => [m.t, ...(m.more||[])].join('\n\n').replace(/\*\*|==/g,'');
+    mk('copy','复制', async()=>{ toast(await copyText(plain()) ? '已复制' : '复制失败，长按文字手动复制'); });
     mk('refresh','重新回答', ()=>{ if (busy) return; const q = lastQuestion(); if (q) answer(q); else toast('没有可以重新回答的问题'); });
-    mk('speaker','朗读', ()=>{ try { speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(m.t.replace(/\*\*/g,'')); u.lang='zh-CN'; u.rate = m.L===0?.75 : m.L>=6?1.25:1; speechSynthesis.speak(u); } catch(e){ toast('这个浏览器不支持朗读'); } });
+    mk('speaker','朗读', ()=>{ try { speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(plain().replace(/[|]/g,' ')); u.lang='zh-CN'; u.rate = m.L===0?.75 : m.L>=6?1.25:1; speechSynthesis.speak(u); } catch(e){ toast('这个浏览器不支持朗读'); } });
     const up = mk('up','有用', b=>{ b.classList.toggle('on'); dn.classList.remove('on'); if (b.classList.contains('on')) toast('收到，努力值 +1'); });
     const dn = mk('down','没用', b=>{ b.classList.toggle('on'); up.classList.remove('on'); if (b.classList.contains('on')) toast('收到，下次更努力'); });
-    mk('share','分享', async()=>{ const ok = await copyText(`我问逗包（Lv${m.L} ${LEVELS[m.L].n}）：\n${lastQuestion()||''}\n\n它说：${m.t.replace(/\*\*/g,'')}`); toast(ok?'回答已复制，去粘贴给朋友吧':'复制失败'); });
+    mk('share','分享', async()=>{ const ok = await copyText(`我问${S.bot}（Lv${m.L} ${LEVELS[m.L].n}）：\n${lastQuestion()||''}\n\n它说：${plain()}`); toast(ok?'回答已复制，去粘贴给朋友吧':'复制失败'); });
     return d;
   }
   function lastQuestion(){ const c=chat(S.cur); if(!c) return ''; for (let i=c.msgs.length-1;i>=0;i--) if (c.msgs[i].r==='u') return c.msgs[i].t; return ''; }
-  function followEl(){
+  const GAME_SUGGEST = [['猜数字','猜数字'],['石头剪刀布','石头剪刀布'],['成语接龙','成语接龙'],['真心话','真心话'],['大冒险','大冒险'],['讲个笑话','给我讲个笑话'],['今日运势','今日运势'],['掷骰子','掷骰子']];
+  function followEl(last){
     const d=document.createElement('div'); d.className='followups';
+    const c = chat(S.cur);
+    if (c && c.game){
+      const G = {guess:[['不玩了','不玩了']], rps:[['✊ 石头','石头'],['✌️ 剪刀','剪刀'],['✋ 布','布'],['不玩了','不玩了']], idiom:[['不玩了','不玩了']]}[c.game.g] || [];
+      G.forEach(([t,q])=>{ const b=document.createElement('button'); b.textContent=t; b.onclick=()=>send(q); d.appendChild(b); });
+      return d;
+    }
     if (S.level<7){ const b=document.createElement('button'); b.innerHTML=`${ic('bolt',14,2)}再努力一点`; b.onclick=()=>regenAt(S.level+1); d.appendChild(b); }
     if (S.level>0){ const b=document.createElement('button'); b.innerHTML=`${ic('zz',14,2)}别那么努力`; b.onclick=()=>regenAt(S.level-1); d.appendChild(b); }
     if (S.level<7){ const b=document.createElement('button'); b.innerHTML=`${ic('spark',14,2)}直接飞升`; b.onclick=()=>regenAt(7); d.appendChild(b); }
+    if (last && last.unknown){ const two = GAME_SUGGEST.slice().sort(()=>Math.random()-.5).slice(0,2); two.forEach(([t,q])=>{ const b=document.createElement('button'); b.textContent='试试：'+t; b.onclick=()=>send(q); d.appendChild(b); }); }
     return d;
   }
   function renderMsgs(){
@@ -1923,7 +2652,7 @@ const App = (() => {
       else box.appendChild(botEl(m,false));
     });
     const lastBot = [...c.msgs].reverse().find(m=>m.r==='b');
-    if (lastBot && !lastBot.intro && c.msgs[c.msgs.length-1]===lastBot) box.appendChild(followEl());
+    if (lastBot && !lastBot.intro && c.msgs[c.msgs.length-1]===lastBot) box.appendChild(followEl(lastBot));
   }
   function scrollEnd(){ const ch=$('#chat'); ch.scrollTop = ch.scrollHeight; }
   async function regenAt(L){
@@ -1968,20 +2697,21 @@ const App = (() => {
       if (L===0){ /* lazy mode costs nothing */ } else { c.msgs.push(m); saveChats(); $('#msgs').appendChild(botEl(m,false)); scrollEnd(); busy=false; syncInput(); return; }
     }
     S.quota = Math.min(100, S.quota + lv.cost); store.set('quota', S.quota);
-    const r = Brain.answer(q, S.bot);
-    const m = {r:'b', L, t:Brain.wrap(L, r), think:Brain.thinking(L, q), fake:lv.fake, done:false};
-    if (L>=4 && !RM) await XF.play(L, q);
+    const o = Gen.respond(q, {level:L, bot:S.bot, chat:c, temp:TEMPS[S.temp].v});
+    const m = {r:'b', L, t:o.t, more:o.more, think:o.think, fake:o.fake, label:o.label, unknown:o.unknown, done:false};
+    const isGame = o.kind==='game';
+    if (L>=4 && !RM && !isGame) await XF.play(L, q);
     const el = botEl(m, true); $('#msgs').appendChild(el); scrollEnd();
     const th = el.querySelector('.think'), body = el.querySelector('.think-b'), lb = el.querySelector('.lb'), tm = el.querySelector('.tm');
     let liveO = null; const cv = el.querySelector('.av canvas');
     if (cv) liveO = Live.add(cv, ()=>L, {crop:'face', small:true});
     if (L>0){
-      const total = lv.think, t0 = performance.now(); let shown = 0;
+      const total = isGame ? Math.min(1600, lv.think*.3) : lv.think, t0 = performance.now(); let shown = 0;
       const lines = m.think;
       await new Promise(res=>{
         function tick(){
           const e = performance.now()-t0, p = hurry ? 1 : Math.min(1, e/total);
-          const fake = Math.expm1(p*Math.log1p(lv.fake));
+          const fake = Math.expm1(p*Math.log1p(m.fake));
           tm.textContent = fmtFake(fake);
           const want = Math.min(lines.length, Math.floor(p*lines.length*1.02)+ (p>0?1:0));
           while (shown < want){ const pe=document.createElement('p'); pe.className='new'; pe.textContent=lines[shown++]; body.appendChild(pe); scrollEnd(); }
@@ -2009,9 +2739,17 @@ const App = (() => {
       await sleep(delay);
     }
     ans.innerHTML = md(m.t);
+    for (const extra of (m.more||[])){
+      const typing = document.createElement('div'); typing.className='typing'; typing.innerHTML='<i></i><i></i><i></i>'; el.appendChild(typing); scrollEnd();
+      await sleep(hurry ? 0 : L===0 ? 1800 + Math.random()*1400 : 900);
+      typing.remove();
+      const b = document.createElement('div'); b.className='ans more lv'+L; el.appendChild(b);
+      for (let i=0;i<=extra.length;i+=step){ if (hurry) break; b.innerHTML = md(extra.slice(0,i)); await sleep(delay); }
+      b.innerHTML = md(extra); scrollEnd();
+    }
     m.done = true; c.msgs.push(m); c.ts = Date.now(); saveChats();
     el.appendChild(actsEl(m));
-    $('#msgs').appendChild(followEl());
+    $('#msgs').appendChild(followEl(m));
     scrollEnd();
     busy = false; hurry = false; syncInput();
     renderChips();
@@ -2084,7 +2822,14 @@ const App = (() => {
     sl.querySelectorAll('.stop').forEach((s,i)=>s.classList.toggle('lit', i<=L));
     sl.querySelectorAll('.lb').forEach((s,i)=>s.classList.toggle('on', i===L));
     $('#effStage').style.boxShadow = L>=4 ? `0 10px 40px ${lv.glow}88` : '';
+    renderTemp();
   }
+  function renderTemp(){
+    const box = $('#tempSeg'); if (!box) return;
+    box.innerHTML = TEMPS.map((t,i)=>`<button data-i="${i}" class="${i===S.temp?'on':''}">${t.n}</button>`).join('');
+    box.onclick = e => { const b=e.target.closest('[data-i]'); if(!b) return; setTemp(+b.dataset.i); };
+  }
+  function setTemp(i){ S.temp = i; store.set('temp', i); Gen.setTemp(TEMPS[i].v); renderTemp(); toast(['稳重：回答更规矩','正常：偶尔整点活','活泼：经常整点活','放飞：随时可能离谱'][i]); }
   function buildSlider(){
     const sl=$('#effSlider'); if (sl.dataset.built) return; sl.dataset.built='1';
     LEVELS.forEach((lv,i)=>{ const s=document.createElement('div'); s.className='stop'; sl.appendChild(s); const l=document.createElement('div'); l.className='lb'; l.textContent=lv.n; sl.appendChild(l); });
@@ -2168,6 +2913,7 @@ const App = (() => {
       [ row('edit','c-blue','启动逗包时打开新对话', null, ()=>{ S.startNew=!S.startNew; store.set('startNew',S.startNew); renderSettings(); }, {toggle:S.startNew}),
         row('toggles','c-blue','默认开启模式', S.defMode==='chat'?'对话':'工作', ()=>{ S.defMode = S.defMode==='chat'?'work':'chat'; store.set('defMode',S.defMode); renderSettings(); }, {updown:true}),
         row('model','c-purple','新对话默认努力程度', `Lv${S.level} ${lv.n}`, ()=>openEffort()),
+        row('spark','c-purple','回答随机度（temperature）', TEMPS[S.temp].n, ()=>{ setTemp((S.temp+1)%TEMPS.length); renderSettings(); }, {updown:true}),
         row('cursor','c-blue','工作模式设置','',()=>toast('工作模式：自动把摸鱼包装成成果')),
         row('keyboard','c-green','键盘回车键行为', S.enterSend?'发送消息':'换行', ()=>{ S.enterSend=!S.enterSend; store.set('enter',S.enterSend); renderSettings(); }, {updown:true}),
         row('spark','c-blue','内容生成与产物设置','',()=>toast('产物：一个努力的回答')) ],
@@ -2272,6 +3018,9 @@ const App = (() => {
     const g=$('#plusGrid'); g.innerHTML = PLUS.map((p,i)=>`<button class="gi" data-i="${i}"><span>${ic(p[0],26)}</span>${p[1]}</button>`).join('');
     g.onclick = e => { const b=e.target.closest('[data-i]'); if(!b) return; closeSheet('#swPlus'); setTimeout(PLUS[+b.dataset.i][2], 180); };
     window.addEventListener('resize', ()=>{ const sl=$('#effSlider'); if (sl._place){ sl._place(); effortUI(); } });
+    // keep the shell pinned: iOS keyboards and programmatic focus can scroll overflow-hidden containers
+    const pin = el => el.addEventListener('scroll', ()=>{ if (el.scrollTop || el.scrollLeft){ el.scrollTop = 0; el.scrollLeft = 0; } });
+    pin($('#app')); pin(document.documentElement); pin(document.body);
   }
 
   async function init(){
@@ -2294,7 +3043,7 @@ const XF = (() => {
       box.hidden = false; requestAnimationFrame(()=>box.classList.add('show'));
       box.style.setProperty('--xglow', lv.glow); box.style.setProperty('--xbar', lv.bar);
       $('#xfLv').textContent = `努力程度 · LV${L}`; $('#xfName').textContent = '…';
-      const lines = $('#xfLines'); lines.textContent = `目标问题：「${Brain.short(q)}」`;
+      const lines = $('#xfLines'); lines.textContent = `目标问题：「${q.length>14 ? q.slice(0,14)+'…' : q}」`;
       const bar = $('#xfBar'); bar.style.width='0%';
       curL = 1; o = Live.add($('#xfCanvas'), ()=>curL, {onZap:()=>Snd.zap()});
       const steps = [1]; for (let k=4;k<=L;k++) steps.push(k);
