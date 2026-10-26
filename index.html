@@ -245,10 +245,6 @@ main{flex:1;min-height:0;position:relative}
 .eff-stats div{background:#f6f6f8;border-radius:14px;padding:9px 6px;text-align:center}
 .eff-stats small{display:block;font-size:11.5px;color:var(--fg2)}
 .eff-stats b{display:block;font-size:14.5px;margin-top:2px;font-variant-numeric:tabular-nums;font-weight:600}
-.temp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:-2px 2px 14px;font-size:13.5px;color:var(--fg2)}
-.temp-seg{display:grid;grid-template-columns:repeat(4,1fr);background:#f1f1f3;border-radius:999px;padding:3px;flex:1;max-width:250px}
-.temp-seg button{font-size:13px;padding:5px 0;border-radius:999px;color:#6b6d74}
-.temp-seg button.on{background:#fff;color:var(--fg);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .ans mark.key{background:none;color:inherit;font-weight:700}
 .ans.lv0{color:#7d8088}
 .ans.lv2 mark.key{background:linear-gradient(transparent 58%,#ffd6d6 0)}
@@ -449,7 +445,6 @@ main{flex:1;min-height:0;position:relative}
         <div><small>额度消耗</small><b id="effCost">1%</b></div>
         <div><small>智力加成</small><b id="effIq">+0%</b></div>
       </div>
-      <div class="temp-row"><span>回答随机度</span><div class="temp-seg" id="tempSeg"></div></div>
       <button class="pbtn" id="effOk">就这么努力</button>
     </div>
   </div></div>
@@ -604,7 +599,6 @@ const LEVELS = [
   {n:'超神', tag:'烈焰神瞳', desc:'燃烧全部脑细胞',       think:7400, fake:22620,    cost:22, iq:'+0%', pw:1.2e6,  glow:'#ff4a4a', bar:'#ff4a4a', label:'已燃烧思考'},
   {n:'飞升', tag:'宇宙意志', desc:'调动全宇宙的算力',     think:8800, fake:4.35e17,  cost:35, iq:'+0%', pw:Infinity, glow:'#c7a2ff', bar:'linear-gradient(90deg,#ff5f6d,#ffc371,#47e5bc,#4facfe,#b06bff)', label:'已飞升思考'},
 ];
-const TEMPS = [{v:.5,n:'稳重'},{v:1,n:'正常'},{v:1.6,n:'活泼'},{v:2.4,n:'放飞'}];
 function fmtFake(sec){
   if (!isFinite(sec)) return '∞';
   if (sec < 10) return (Math.round(sec*10)/10) + ' 秒';
@@ -1205,7 +1199,7 @@ const Games = (() => {
 
 /* ---------- persona engine: turns a solved question into a reply in each level's voice ---------- */
 const Gen = (() => {
-  let T = 1.6;                    // temperature
+  let T = 1.6;                    // temperature, re-rolled for every reply
   const recent = [];
   const R = Math.random;
   const ri = (a,b) => a + Math.floor(R()*(b-a+1));
@@ -1645,7 +1639,8 @@ const Gen = (() => {
 
   /* ===== main ===== */
   function respond(q, opt){
-    T = opt.temp || 1.6;
+    // randomness is the bot's own business: each reply rolls its own temperature, with the odd wild spike
+    T = 0.6 + R()*1.6 + (R()<.12 ? 1 : 0);
     const L = opt.level, chat = opt.chat;
     const kw = q.replace(/请问|帮我|帮忙|麻烦|一下|吗|呢|吧|啊|呀|[？?。！!，,～~]/g,'').trim().slice(0,12) || q.slice(0,12);
     C = {q: q.length>16 ? q.slice(0,16)+'…' : q, kw, qlen: q.replace(/\s/g,'').length, subj: kw.replace(/是谁|谁是|为什么|为啥|凭什么|怎么样|怎么|如何|怎样|是什么|什么是|啥是|什么意思|多少钱|价格|贵不贵|你知道|知道|告诉我|一下|请问/g,'').trim() || kw, bot: opt.bot || '逗包'};
@@ -1664,8 +1659,7 @@ const Gen = (() => {
     const jitter = L===7 ? (0.6 + R()*2.2) : (0.65 + R()*0.8);
     return {t, more: out.more || null, unknown: !!out.unknown, think: thinking(L, res), fake: lv.fake * jitter, label: L===0 ? pick(['已跳过思考（太累了）','思考？不存在的','已省略思考（省电模式）','已跳过思考（在睡觉）']) : lv.label, kind: res.kind};
   }
-  function setTemp(v){ T = v; }
-  return {respond, setTemp, JOKES};
+  return {respond, JOKES};
 })();
 
 /* picojs face detector by Nenad Markus, MIT license: https://github.com/nenadmarkus/picojs */
@@ -2448,19 +2442,16 @@ const App = (() => {
     startNew: store.get('startNew',false),
     defMode: store.get('defMode','chat'),
     videos: store.get('videos',false),
-    temp: store.get('temp',2),
     chats: store.get('chats', null),
     cur: null,
   };
   if (!S.user.id) S.user.id = rid();
-  if (!(S.temp>=0 && S.temp<TEMPS.length)) S.temp = 2;
-  Gen.setTemp(TEMPS[S.temp].v);
   let CHAR = buildCharacter(null);
   let busy = false, hurry = false;
 
   /* seed: a pinned main chat and three example chats that show the joke */
   function seed(){
-    const demo = (id, title, ago, L, q) => { const c = {id, title, ts:Date.now()-ago, msgs:[{r:'u', t:q}]}; const o = Gen.respond(q, {level:L, bot:'逗包', chat:c, temp:1.6}); c.msgs.push({r:'b', L, t:o.t, more:o.more, think:o.think, fake:o.fake, label:o.label, done:true}); return c; };
+    const demo = (id, title, ago, L, q) => { const c = {id, title, ts:Date.now()-ago, msgs:[{r:'u', t:q}]}; const o = Gen.respond(q, {level:L, bot:'逗包', chat:c}); c.msgs.push({r:'b', L, t:o.t, more:o.more, think:o.think, fake:o.fake, label:o.label, done:true}); return c; };
     return [
       {id:'main', title:'主对话', ts:Date.now(), msgs:[{r:'b', L:1, t:'我是逗包。下面那颗「努力」按钮可以调我的努力程度，从「摆烂」一路拉到「飞升」。\n\n同一个问题，换个努力程度再问一遍，答法完全不同。还能跟我玩「猜数字」「石头剪刀布」「成语接龙」「真心话」，努力程度越高，我越会耍赖。\n\n想看自己（或朋友）变身，去「我的 › 逗包形象」上传一张照片。', think:[], fake:0, done:true, intro:true}]},
       demo('d1', '1+1 等于几（飞升版）', 60000, 7, '1+1 等于几？'),
@@ -2697,7 +2688,7 @@ const App = (() => {
       if (L===0){ /* lazy mode costs nothing */ } else { c.msgs.push(m); saveChats(); $('#msgs').appendChild(botEl(m,false)); scrollEnd(); busy=false; syncInput(); return; }
     }
     S.quota = Math.min(100, S.quota + lv.cost); store.set('quota', S.quota);
-    const o = Gen.respond(q, {level:L, bot:S.bot, chat:c, temp:TEMPS[S.temp].v});
+    const o = Gen.respond(q, {level:L, bot:S.bot, chat:c});
     const m = {r:'b', L, t:o.t, more:o.more, think:o.think, fake:o.fake, label:o.label, unknown:o.unknown, done:false};
     const isGame = o.kind==='game';
     if (L>=4 && !RM && !isGame) await XF.play(L, q);
@@ -2822,14 +2813,7 @@ const App = (() => {
     sl.querySelectorAll('.stop').forEach((s,i)=>s.classList.toggle('lit', i<=L));
     sl.querySelectorAll('.lb').forEach((s,i)=>s.classList.toggle('on', i===L));
     $('#effStage').style.boxShadow = L>=4 ? `0 10px 40px ${lv.glow}88` : '';
-    renderTemp();
   }
-  function renderTemp(){
-    const box = $('#tempSeg'); if (!box) return;
-    box.innerHTML = TEMPS.map((t,i)=>`<button data-i="${i}" class="${i===S.temp?'on':''}">${t.n}</button>`).join('');
-    box.onclick = e => { const b=e.target.closest('[data-i]'); if(!b) return; setTemp(+b.dataset.i); };
-  }
-  function setTemp(i){ S.temp = i; store.set('temp', i); Gen.setTemp(TEMPS[i].v); renderTemp(); toast(['稳重：回答更规矩','正常：偶尔整点活','活泼：经常整点活','放飞：随时可能离谱'][i]); }
   function buildSlider(){
     const sl=$('#effSlider'); if (sl.dataset.built) return; sl.dataset.built='1';
     LEVELS.forEach((lv,i)=>{ const s=document.createElement('div'); s.className='stop'; sl.appendChild(s); const l=document.createElement('div'); l.className='lb'; l.textContent=lv.n; sl.appendChild(l); });
@@ -2913,7 +2897,6 @@ const App = (() => {
       [ row('edit','c-blue','启动逗包时打开新对话', null, ()=>{ S.startNew=!S.startNew; store.set('startNew',S.startNew); renderSettings(); }, {toggle:S.startNew}),
         row('toggles','c-blue','默认开启模式', S.defMode==='chat'?'对话':'工作', ()=>{ S.defMode = S.defMode==='chat'?'work':'chat'; store.set('defMode',S.defMode); renderSettings(); }, {updown:true}),
         row('model','c-purple','新对话默认努力程度', `Lv${S.level} ${lv.n}`, ()=>openEffort()),
-        row('spark','c-purple','回答随机度（temperature）', TEMPS[S.temp].n, ()=>{ setTemp((S.temp+1)%TEMPS.length); renderSettings(); }, {updown:true}),
         row('cursor','c-blue','工作模式设置','',()=>toast('工作模式：自动把摸鱼包装成成果')),
         row('keyboard','c-green','键盘回车键行为', S.enterSend?'发送消息':'换行', ()=>{ S.enterSend=!S.enterSend; store.set('enter',S.enterSend); renderSettings(); }, {updown:true}),
         row('spark','c-blue','内容生成与产物设置','',()=>toast('产物：一个努力的回答')) ],
